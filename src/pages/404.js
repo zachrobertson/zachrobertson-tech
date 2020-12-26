@@ -1,14 +1,22 @@
 import React from "react"
-
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+const Default404Page = () => {
+    return (
+        <Layout>
+            <h1 style={{
+                textAlign: "center"
+            }}>
+                404 page not found!
+            </h1>
+            <br/>
+            <h5 style={{
+                textAlign: "center"
+            }}>
+                That's weird right?
+            </h5>
+        </Layout>
+    )
+}
 
-export default NotFoundPage
+export default Default404Page
