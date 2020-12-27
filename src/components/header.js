@@ -13,7 +13,7 @@ function Header() {
     return (
         <>
             <StyledHeader style={{
-                            backgroundColor: (showHeader ? "rgba(255, 255, 255, 1)" : "transparent")
+                            backgroundColor: (showHeader ? "rgb(22, 24, 29, 1)" : "transparent")
                         }}>
                 <Hamburger onClick={() => setShowHeader(!showHeader)} style={{
                     zIndex: "5",
@@ -67,7 +67,7 @@ const StyledHeader = styled.div`
     top: 0;
     left: 0;
     align-items: center;
-    width: 20%;
+    width: 12%;
     height: 100vh;
     scroll-behvior: smooth;
     z-index: 10;

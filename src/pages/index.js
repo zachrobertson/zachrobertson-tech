@@ -19,14 +19,7 @@ const IndexPage = ({
   return (
     <>
       <Layout>
-        <ToDo>
-          <ul>
-            <h2>this is a list</h2>
-            <li>
-              this is a list item
-            </li>
-          </ul>
-        </ToDo>
+        
         <IntroHeader>
           
             <h1>
@@ -40,8 +33,24 @@ const IndexPage = ({
         </IntroHeader>
 
         <HorizontalLine />  
+        <h2 style={{
+          textAlign: "center",
+          margin: "50px",
+          fontSize: "50px"
+        }}>
+          Recent Blog Posts:
+        </h2>
+          {Posts}     
+
+        <ToDo>
           
-          {Posts}        
+            <h1>
+              Upcoming projects:
+            </h1>
+
+            <HorizontalLine />
+          
+        </ToDo>   
       
       </Layout>
     </>
@@ -62,7 +71,6 @@ export const pageQuery = graphql`
               slug
               title
             }
-            rawMarkdownBody
           }
         }
       }
@@ -110,17 +118,11 @@ const HorizontalLine = styled.hr`
 `
 
 const ToDo = styled.div`
-  position: absolute;
-  display: flex; 
-  flex-direction: column;
-  background: white;
-  align-items: center;
-  margin-top: 0;
-  right: 0;
-  height: 100%;
-  width: 25%;
-
-  @media (max-width: 1024px) {
-    display: none !important;
-  }
+  background: bisque;
+  padding: 10%;
+  padding-top: 10px;
+  border-radius: 10px/10px;
+  text-align: center;
+  height: 250px;
+  margin: 10% 10% 10% 10%;
 `;

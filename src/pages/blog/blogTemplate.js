@@ -23,9 +23,10 @@ export default function Template({ data }) {
             
             <HorizontalLine />
 
-            <BodyContainer>
-                {markdownRemark.rawMarkdownBody}
-            </BodyContainer>
+            <PostContainer 
+             className="blog-post-content"
+             dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
+            />
         </PostWrapper>
     </Layout>
   )
@@ -43,15 +44,9 @@ query($slug: String!) {
       title
       author
     }
-    rawMarkdownBody
+    html
   }
 }
-`
-
-const BodyContainer = styled.div`
-    align-items: center;
-    align-content: center;
-    text-align: center;
 `
 
 const PostWrapper = styled.div`
@@ -62,7 +57,7 @@ const PostWrapper = styled.div`
 
 const TitleHeader = styled.h1`
     text-align: center;
-    margin: 10 0 0 0;
+    align-content: center;
 `
 
 const DateHeader = styled.div`
@@ -72,8 +67,24 @@ const DateHeader = styled.div`
 
 const HorizontalLine = styled.div`
     display: flex;
-    width: 100%;
     height: 2px;
     background-color: black;
     margin: 25px;
+`
+
+const PostContainer = styled.div`
+    background: bisque;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px/10px;
+
+    p {
+        line-height: 1.5;
+        font-size: 25px;
+    }
 `

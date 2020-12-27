@@ -6,10 +6,11 @@ import { createGlobalStyle } from "styled-components"
 
 const Global = createGlobalStyle`
   html, body {
-    background: #666;
+    background: #363945;
     margin: 0;
     position: relative;
     font-family: "Lucida Console";
+    color: black;
   }
 `
 

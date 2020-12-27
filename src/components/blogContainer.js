@@ -10,8 +10,8 @@ const BlogContainer = ({ data }) => {
         }}>
         <Container>
             <h1>{data.frontmatter.title}</h1>
-            <hr />
-            <p>{data.rawMarkdownBody}</p>
+            <HorizontalLine />
+            <p>{data.html}</p>
         </Container>
         </Link>
     )
@@ -22,7 +22,6 @@ export default BlogContainer
 const Container = styled.div`
     position: relative;
     left: -96px;
-    align-items: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,9 +32,9 @@ const Container = styled.div`
     color: black;
     margin: 10% 10% 10% 10%;
     text-align: center;
+    border-radius: 10px/10px;
+`
 
-    hr {
-        width: 90%;
-        color: black;
-    }
+const HorizontalLine = styled.hr`
+    width: 90%;
 `

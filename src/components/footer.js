@@ -49,7 +49,7 @@ const StyledFooter = styled.footer`
     position: relative;
     text-align: center;
     align-items: center;
-    background: bisque;
+    background: #16181d;
     width: 100%;
     height: 7.5rem;
     border: none;
