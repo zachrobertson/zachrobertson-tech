@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (zachrobertson.tech) -->
 <p align="center">
   <a href="https://www.zachrobertson.tech">
-    <img alt="Profile" src="./src/images/profile.jpg" width="60" borderRadius="50%" border="5px solid white" webkitBorderRadius="500px" mozBorderRadius= "500px" padding=0 />
+    <img alt="Profile" src="./src/images/profile.jpg" borderRadius="50%" border="5px solid white" webkitBorderRadius="500px" mozBorderRadius= "500px" padding=0 />
   </a>
 </p>
 <h1 align="center">
