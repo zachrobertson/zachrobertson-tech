@@ -1,9 +1,9 @@
 <!-- AUTO-GENERATED-CONTENT:START (zachrobertson.tech) -->
 <p align="center">
   <a href="https://www.zachrobertson.tech">
-    <img alt="Profile" src="./src/images/profile.jpg" style={{
+    <img alt="Profile" src="./src/images/profile.jpg"
       border-radius="50%"
-    }}/>
+    />
   </a>
 </p>
 <h1 align="center">
