@@ -1,11 +1,11 @@
 <!-- AUTO-GENERATED-CONTENT:START (zachrobertson.tech) -->
 <p align="center">
   <a href="https://www.zachrobertson.tech">
-    <img alt="Profile" src="./src/images/profile.jpg" borderRadius="50%" border="5px solid white" webkitBorderRadius="500px" mozBorderRadius= "500px" padding=0 />
+    <img alt="Profile" src="./src/images/profile.jpg" border-radius="50%"/>
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  zachrobertson.tech
 </h1>
 
 Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
