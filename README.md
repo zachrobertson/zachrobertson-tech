@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (zachrobertson.tech) -->
 <p align="center">
   <a href="https://www.zachrobertson.tech">
-    <div border-radius="50%">
+    <div border-radius="50%" align="center">
       <img alt="Profile" src="./src/images/profile.jpg" />
     </div>
   </a>
