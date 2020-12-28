@@ -1,7 +1,9 @@
 <!-- AUTO-GENERATED-CONTENT:START (zachrobertson.tech) -->
 <p align="center">
   <a href="https://www.zachrobertson.tech">
-    <img alt="Profile" src="./src/images/profile.jpg" border="black"/>
+    <div border-radius="50%">
+      <img alt="Profile" src="./src/images/profile.jpg" />
+    </div>
   </a>
 </p>
 <h1 align="center">
