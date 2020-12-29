@@ -16,7 +16,6 @@ It is layed out the same way as any other gatsby site but let me walk you throug
 ## Layout
 
     .
-    
     ├── src
       ├── components
         ├── blogContainer.js
@@ -50,3 +49,4 @@ It is layed out the same way as any other gatsby site but let me walk you throug
     ├── package-lock.json
     └── package.json
     
+This is the typical layout of a Gatsby project, if you have not worked with gatsby before it would be best to go take a look at their quick start <a href="https://www.gatsbyjs.com/docs/quick-start/">here</a>.
