@@ -16,15 +16,15 @@ It is layed out the same way as any other gatsby site but let me walk you throug
 ## Layout
 
 .
-+--src
-+--.gitignore
-+--.prettierignore
-+--.prettierrc
-+--LICENSE
-+--README.md
-+--gatsby-browser.js
-+--gatsby-config.js
-+--gatsby-node.js
-+--gatsby-ssr.js
-+--package-lock.json
-+--package.json
+    ├── node_modules
+    ├── src
+    ├── .gitignore
+    ├── .prettierrc
+    ├── gatsby-browser.js
+    ├── gatsby-config.js
+    ├── gatsby-node.js
+    ├── gatsby-ssr.js
+    ├── LICENSE
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
