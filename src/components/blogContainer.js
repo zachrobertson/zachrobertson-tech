@@ -11,7 +11,7 @@ const BlogContainer = ({ data }) => {
         <Container>
             <h1>{data.frontmatter.title}</h1>
             <HorizontalLine />
-            <p>{data.html}</p>
+            <p>{data.internal.content}</p>
         </Container>
         </Link>
     )
@@ -26,13 +26,16 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 250px;
     background-color: bisque;
     font-family: "Lucida Console";
     color: black;
     margin: 10% 10% 10% 10%;
     text-align: center;
     border-radius: 10px/10px;
+
+    p {
+        height: auto;
+    }
 `
 
 const HorizontalLine = styled.hr`

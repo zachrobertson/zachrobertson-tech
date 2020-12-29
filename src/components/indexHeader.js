@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { useState, useEffect } from "react"
 
 function Header() {
-    const headerShowDefault = false;
+    const headerShowDefault = true;
     const menuHoverDefault = false;
 
     const [showHeader, setShowHeader] = useState(headerShowDefault)

@@ -1,10 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
-import Layout from "../components/layout"
+import Layout from "../components/indexLayout"
 import Profile from "../components/profile"
 import BlogContainer from "../components/blogContainer"
-import { Media } from "react-bootstrap"
 
 
 const IndexPage = ({ 
@@ -65,7 +64,7 @@ export const pageQuery = graphql`
         edges {
           node {
             id
-            excerpt(pruneLength: 250)
+            excerpt(format: HTML, )
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
               slug
