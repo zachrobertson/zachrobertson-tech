@@ -15,7 +15,7 @@ It is layed out the same way as any other gatsby site but let me walk you throug
 
 ## Layout
 
-.
+    .
     ├── node_modules
     ├── src
     ├── .gitignore
