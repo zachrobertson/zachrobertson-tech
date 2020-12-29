@@ -18,10 +18,26 @@ It is layed out the same way as any other gatsby site but let me walk you throug
     .
     
     ├── src
-      ├── pages
-      ├── images
       ├── components
-      └── markdown-pages
+        ├── blogContainer.js
+        ├── footer.js
+        ├── header.js
+        ├── layout.js
+        ├── post-link.js
+        └── profile.js
+      ├── images
+        ├── GitHubLogo.png
+        ├── LinkedinLogo.png
+        └── profile.jpg
+      ├── markdown-pages
+        └── buildingGatsbySite.md
+      └── pages
+        ├── blog
+          └── blogTemplate.js
+        ├── 404.js
+        ├── blog.js
+        ├── contact.js
+        └── index.js
     ├── .gitignore
     ├── .prettierignore
     ├── .prettierrc
