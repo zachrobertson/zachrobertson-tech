@@ -8,7 +8,7 @@ It is layed out the same way as any other gatsby site but let me walk you throug
 
     .
     ├── src
-      ├── components
+      └── components
         ├── blogContainer.js
         ├── footer.js
         ├── header.js
@@ -16,11 +16,11 @@ It is layed out the same way as any other gatsby site but let me walk you throug
         ├── indexLayout.js
         ├── layout.js
         └── profile.js
-      ├── images
+      └── images
         ├── GitHubLogo.png
         ├── LinkedinLogo.png
         └── profile.jpg
-      ├── markdown-pages
+      └── markdown-pages
         └── buildingGatsbySite.md
       └── pages
         ├── blog
