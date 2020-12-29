@@ -1,15 +1,6 @@
 
-<p align="center">
-  <a href="https://www.zachrobertson.tech">
-    <div border-radius="50%" align="center">
-      <img alt="Profile" src="./src/images/profile.jpg" />
-    </div>
-  </a>
-</p>
-<h1 align="center">
-  zachrobertson.tech
-</h1>
-
+<h1>zachrobertson.tech</h1>
+<div>
 This is a site built with gatsby, and designed by me!
 It is layed out the same way as any other gatsby site but let me walk you through it.
 
@@ -70,3 +61,4 @@ Below is a breakdown of what each file in the src/ sub-directories is for.
 >>> This is the standard layout component, it gives the style and extra functionality to all the pages other than the index page. 
 >> #### profile.js
 >>> A react component for the picture on the index page.
+</div>
