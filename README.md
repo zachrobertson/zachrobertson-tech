@@ -21,7 +21,7 @@ It is layed out the same way as any other gatsby site but let me walk you throug
       ├── pages
       ├── images
       ├── components
-      ├── markdown-pages
+      └── markdown-pages
     ├── .gitignore
     ├── .prettierignore
     ├── .prettierrc
