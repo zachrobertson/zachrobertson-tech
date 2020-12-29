@@ -14,3 +14,17 @@ This is a site built with gatsby, and designed by me!
 It is layed out the same way as any other gatsby site but let me walk you through it.
 
 ## Layout
+
+.
++--src
++--.gitignore
++--.prettierignore
++--.prettierrc
++--LICENSE
++--README.md
++--gatsby-browser.js
++--gatsby-config.js
++--gatsby-node.js
++--gatsby-ssr.js
++--package-lock.json
++--package.json
