@@ -9,6 +9,8 @@ It is layed out the same way as any other gatsby site but let me walk you throug
     .
     ├── src
       └── components
+        ├── blog
+            └── blogTemplate.js
         ├── blogContainer.js
         ├── footer.js
         ├── header.js
@@ -23,8 +25,6 @@ It is layed out the same way as any other gatsby site but let me walk you throug
       └── markdown-pages
         └── buildingGatsbySite.md
       └── pages
-        ├── blog
-          └── blogTemplate.js
         ├── 404.js
         ├── blog.js
         ├── contact.js
@@ -61,4 +61,10 @@ Below is a breakdown of what each file in the src/ sub-directories is for.
 >>> This is the standard layout component, it gives the style and extra functionality to all the pages other than the index page. 
 >> #### profile.js
 >>> A react component for the picture on the index page.
+> ### Images
+>> This is just a directory to hold all the image files we might need.
+> ### Markdown-pages
+>> Markdown files are used to automatically create blog posts, if we add a markdown file in this directory it will automatically create a blog post when we rebuild the site.
+> ### Pages
+>> This is the main file in our `src/` directory. If you are familiar with Gatsby you will be aware that for each file in our pages directory a page will be created at `yourcustomurl.xyz/page` where `page` is replaced by the name of the JS file (index is the home page, and sub-directory JS files do not create pages) 
 </div>

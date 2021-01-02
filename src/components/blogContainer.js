@@ -11,7 +11,7 @@ const BlogContainer = ({ data }) => {
         <Container>
             <h1>{data.frontmatter.title}</h1>
             <HorizontalLine />
-            <p>{data.internal.content}</p>
+            <p>{data.excerpt}</p>
         </Container>
         </Link>
     )

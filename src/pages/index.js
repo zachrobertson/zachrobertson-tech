@@ -64,7 +64,7 @@ export const pageQuery = graphql`
         edges {
           node {
             id
-            excerpt(format: HTML, )
+            excerpt(format: HTML)
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
               slug
