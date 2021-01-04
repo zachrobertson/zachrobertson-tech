@@ -9,8 +9,9 @@ const Global = createGlobalStyle`
     background: #363945;
     margin: 0;
     position: relative;
-    font-family: "Lucida Console";
-    color: black;
+    font-family: "Consolas";
+    font-size: 100%;
+    color: #333;
   }
 `
 

@@ -1,10 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 function Header() {
-    const headerShowDefault = false;
+    // Need to update when the url changes
+    if (window.location.href === "http://localhost:8000/") {
+        var headerShowDefault = true;
+    }
+    else {
+        var headerShowDefault = false;
+    }
+    console.log(window.location.href)
     const menuHoverDefault = false;
 
     const [showHeader, setShowHeader] = useState(headerShowDefault)
@@ -82,16 +89,16 @@ const StyledHeader = styled.div`
             padding: 50% 0 50% 0;
             
             a {
-                font-family: "Lucida Console";
+                font-family: "Consolas";
                 font-size: x-large;
-                color: black;
+                color: #333;
 
                 &:visited {
-                    color: black;
+                    color: #333;
                 }
 
                 &:visited:hover {
-                    color: red;
+                    color: purple;
                 }
             }
         }

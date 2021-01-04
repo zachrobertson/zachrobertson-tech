@@ -52,7 +52,7 @@ query($slug: String!) {
 const PostWrapper = styled.div`
     align-items: center;
     text-align: center;
-    font-family: "Lucida Console";
+    font-family: "Consolas";
 `
 
 const TitleHeader = styled.h1`
@@ -68,7 +68,7 @@ const DateHeader = styled.div`
 const HorizontalLine = styled.div`
     display: flex;
     height: 2px;
-    background-color: black;
+    background-color: #333;
     margin: 25px;
 `
 
@@ -82,9 +82,11 @@ const PostContainer = styled.div`
     align-items: center;
     text-align: center;
     border-radius: 10px/10px;
+    color: #333;
 
     p {
         line-height: 1.5;
         font-size: 25px;
+        color: #333;
     }
 `

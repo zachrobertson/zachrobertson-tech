@@ -65,14 +65,14 @@ export default Contact
 
 const ContactHeader = styled.h1`
     text-align: center;
-    font-family: "Lucida Console";
+    font-family: "Consolas";
     padding-top: 25px;
 
 `
 
 const FormWrapper = styled.div`
     position: relative;
-    font-family: "Lucida Console";
+    font-family: "Consolas";
     display: flex;
     flex-direction: column;
     padding-top: 10%;

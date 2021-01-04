@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
-import Layout from "../components/indexLayout"
+import Layout from "../components/Layout"
 import Profile from "../components/profile"
 import BlogContainer from "../components/blogContainer"
 
@@ -27,7 +27,7 @@ const IndexPage = ({
             <div>
               <h2>Zach Robertson:</h2>
               I am a software developer who likes to build things, and contribute to the open source community. I do everything from AI with python to 3D modeling with Fusion360. Sometimes I write about my projects on my <Link to="/blog" style={{ textDecoration: "none" }}>blog</Link>.
-              Follow me on twitter <Link to="https://twitter.com/ZachRTech" style={{ textDecoration: "none" }}>@ZachRTech</Link> or check out my work on <Link to="https://github.com/zachrobertson" style={{ textDecoration: "none" }}>GitHub</Link>
+              Follow me on twitter <a href="https://twitter.com/ZachRTech" style={{ textDecoration: "none" }}>@ZachRTech</a> or check out my work on <a href="https://github.com/zachrobertson" style={{ textDecoration: "none" }}>GitHub</a>
             </div>
         </IntroHeader>
 
@@ -63,8 +63,7 @@ export const pageQuery = graphql`
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
-            id
-            excerpt(format: HTML)
+            htmlAst
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
               slug
@@ -87,7 +86,7 @@ const IntroHeader = styled.h1`
   }
   
   div {
-    font-family: "Lucida Console";
+    font-family: "Consolas";
     font-size: 15px;
     width: 50%;
     text-align: center;
@@ -102,7 +101,7 @@ const IntroHeader = styled.h1`
       }
 
       &:visited {
-        color: black;
+        color: purple;
       }
     }
   }
@@ -112,12 +111,12 @@ const HorizontalLine = styled.hr`
   display: block;
   padding: 0;
   height: 2px;
-  background-color: black;
+  background-color: #333;
   border: none;
 `
 
 const ToDo = styled.div`
-  background: bisque;
+  background: #336699;
   padding: 10%;
   padding-top: 10px;
   border-radius: 10px/10px;

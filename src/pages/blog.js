@@ -31,29 +31,27 @@ const Blog = ({
 export default Blog
   
 export const pageQuery = graphql`
-    query {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 250)
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              slug
-              title
-            }
-            rawMarkdownBody
+  query {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          htmlAst
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
           }
         }
       }
     }
-  `
+}
+`
 
 const PostContainer = styled.div`
 `
 
 const BlogHeader = styled.h1`
-  font-family: "Lucida Console";
+  font-family: "Consolas";
   text-align: center;
 `
 
@@ -61,6 +59,6 @@ const HorizontalLine = styled.hr`
   display: block;
   padding: 0;
   height: 2px;
-  background-color: black;
+  background-color: #333;
   border: none;
 `
