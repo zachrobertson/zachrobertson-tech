@@ -24,25 +24,29 @@ const Contact = () => {
                 <input type="hidden" name="form-name" value="contact" />
             <label >
                 Name :
-                <input type="text" name="name" />
+                <input type="text" name="name" required={true}/>
             </label>
             <br />
             <label >
                 Email :
-                <input type="email" name="email" />
+                <input type="email" name="email" required={true}/>
             </label>
             <br />
             <label >
                 Message :
-                <textarea name="message" required="true" onClick={selectAllText} onFocus={selectAllText}>Type your message here!</textarea>
+                <textarea name="message" required={true} onClick={selectAllText} onFocus={selectAllText} defaultValue={"Type your message here!"} />
             </label>
             <br />
             
-            <input type="button" value={"Submit"} style={{
+            <Submit type="submit" value="SUBMIT" style={{
                 fontFamily : "Consolas",
-                fontSize: "25px",
-                background: "#1f2e2e"
-            }}/>
+                fontSize: "20px",
+                background: "#1f2e2e",
+                border: "2px solid black",
+                borderRadius: "10px/10px",
+                color: "white",
+                padding: "15px"
+            }} />
             
             </Form>
 
@@ -87,6 +91,7 @@ const Form = styled.form`
             border: 2px solid black;
             background: #1f2e2e;
             color: white;
+            box-shadow: 5px 5px 5px 5px black;
         }
 
         textarea {
@@ -100,14 +105,25 @@ const Form = styled.form`
             color: white;
             background: #1f2e2e;
             border: 2px solid black;
+            box-shadow: 5px 5px 5px 5px black;
         }
     }
+`
+
+const Submit = styled.input`
+    box-shadow: 5px 5px 5px 5px black;
+    
+    :hover {
+        cursor: pointer;
+        color: white;
+    }
+
 `
 
 const HorizontalLine = styled.hr`
     display: block;
     padding: 0;
     height: 2px;
-    background-color: black;
+    background-color: #333;
     border: none;
 `

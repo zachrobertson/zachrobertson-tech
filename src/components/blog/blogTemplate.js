@@ -13,9 +13,11 @@ export default function Template({ data }) {
   return (
     <Layout>
         <IntroHeader>
+        <Link to="/">
           <span>
             <Profile/> 
           </span>
+        </Link>
           <div>
             
             <span>{frontmatter.title} </span>
@@ -24,8 +26,8 @@ export default function Template({ data }) {
           </div>
         </IntroHeader>
         <PostContainer 
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+            dangerouslySetInnerHTML={{__html: markdownRemark.html}}
+        />
     </Layout>
   )
 }
@@ -48,7 +50,7 @@ query($slug: String!) {
 `
 
 const IntroHeader = styled.h1`
-  positon: absolute;
+  position: relative;
   text-align: center;
   padding: 20px;
   display: inline-block;
@@ -94,19 +96,25 @@ const HorizontalLine = styled.div`
 `
 
 const PostContainer = styled.div`
-    background: #ffff;
+    background: #1f2e2e;
+    color: #ffff;
     padding: 25px;
     display: flex;
     flex-direction: column;
     position: relative;
-    align-content: center;
-    align-items: center;
     border-radius: 10px/10px;
-    color: #333;
+    box-shadow: 5px 5px 5px 5px black;
 
     p {
         line-height: 1.5;
-        font-size: 25px;
-        color: #333;
+        font-size: 15px;
+    }
+
+    hr {
+        width: 90%;
+    }
+
+    h2 {
+        text-align: center;
     }
 `

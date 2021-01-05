@@ -2,16 +2,19 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+
 const BlogContainer = ({ data }) => {
-    console.log(data)
+    
     return (
         <Link to={data.frontmatter.slug} style={{
             textDecoration: "none"
         }}>
         <Container>
-            <h1>{data.frontmatter.title}</h1>
+            <p>{data.frontmatter.title}</p>
+            <p>{"By : " + data.frontmatter.author + ", " + data.frontmatter.date}</p>
+
             <HorizontalLine />
-            <p>{data.htmlAst.children[2].children[0].value}</p>
+            <p dangerouslySetInnerHTML={{__html: data.excerpt}}/>
         </Container>
         </Link>
     )
@@ -30,8 +33,9 @@ const Container = styled.div`
     font-family: "Consolas";
     color: #ffff;
     margin: 10% 10% 10% 10%;
-    text-align: center;
     border-radius: 10px/10px;
+    padding-left: 20px;
+    box-shadow: 5px 5px 5px 5px black;
 
     p {
         height: auto;

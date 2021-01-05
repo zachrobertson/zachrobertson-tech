@@ -13,7 +13,7 @@ const IndexPage = ({
 }) => {
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
-    .map(edge => <BlogContainer data={edge.node}/>)
+    .map(edge => <BlogContainer data={edge.node} key={edge.node.frontmatter.slug}/>)
 
   return (
     <>
@@ -29,10 +29,7 @@ const IndexPage = ({
               Follow me on twitter <a href="https://twitter.com/ZachRTech" style={{ textDecoration: "none" }}>@ZachRTech</a> or check out my work on <a href="https://github.com/zachrobertson" style={{ textDecoration: "none" }}>GitHub</a>
               <HorizontalLine /> 
             </div>
-            
-        </IntroHeader>
-
-         
+        </IntroHeader>         
         <h2 style={{
           textAlign: "center",
           margin: "50px",
@@ -50,15 +47,15 @@ const IndexPage = ({
 
             <HorizontalLine />
             <ul style={{listStyleType : "circle", textAlign: "left"}}>
-              <li>
+              <li key="ToDo1">
                 Make website mobile friendly
               </li>
-              <li>
+              <li key="ToDo2">
                 LittleBrother v0.0 alpha release :
                 <br />
                 <span> This is my OpenSource dashcamera project built around the ESP32 microcontroller</span>
               </li>
-              <li>
+              <li key="ToDo3">
                 Blog post on how to incorporate MoneyButton into a JavaScript project
               </li>
             </ul>
@@ -77,11 +74,12 @@ export const pageQuery = graphql`
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
-            htmlAst
+            excerpt(pruneLength: 250, format: HTML)
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
               slug
               title
+              author
             }
           }
         }
@@ -90,10 +88,10 @@ export const pageQuery = graphql`
   `
 
 const IntroHeader = styled.h1`
-  positon: absolute;
+  position: relative;
   text-align: center;
-  padding: 20px;
   display: inline-block;
+  vertical-align: center;
 
   span {
     display: inline-block;
@@ -140,6 +138,7 @@ const ToDo = styled.div`
   padding: 10%;
   padding-top: 10px;
   border-radius: 10px/10px;
+  WebKitBorderRadius: 10px/10px;
   text-align: center;
   height: 250px;
   margin: 10% 10% 10% 10%;

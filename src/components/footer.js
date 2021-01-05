@@ -64,6 +64,12 @@ const FooterText = styled.div`
     font-size: 1.25rem;
     color: #ffff;
     left: 50%;
+
+    a {
+        :hover {
+            color: red;
+        }
+    }
 `
 
 const StyledLink = styled.a`

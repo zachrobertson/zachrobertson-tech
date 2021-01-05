@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { useState } from "react"
-import TransitionLink from "gatsby-plugin-transition-link"
 
 function Header() {
     // Need to update when the url changes
@@ -12,7 +11,7 @@ function Header() {
     else {
         headerShowDefault = false;
     }
-    console.log(window.location.href)
+
     const menuHoverDefault = false;
 
     const [showHeader, setShowHeader] = useState(headerShowDefault)
@@ -22,7 +21,7 @@ function Header() {
         <>
             <StyledHeader style={{
                             backgroundColor: (showHeader ? "#1f2e2e" : "transparent"),
-                            boxShadow : (showHeader ? "0 0 10px 10px #363945" : "none")
+                            boxShadow : (showHeader ? "0px 0px 5px 10px black" : "none")
                         }}>
                 <Hamburger onClick={() => setShowHeader(!showHeader)} style={{
                     zIndex: "5",
@@ -46,17 +45,17 @@ function Header() {
                     display: (showHeader ? "" : "none")
                 }}>
                     <li>
-                        <TransitionLink to="/" style={{ textDecoration: "none" }}>
+                        <Link to="/" style={{ textDecoration: "none" , position: "relative", left: "-20px"}}>
                             {'>>>'} Home
-                        </TransitionLink>
+                        </Link>
                     </li>
                     <li>
-                        <TransitionLink to="/blog" style={{ textDecoration: "none" }}>
+                        <Link to="/blog" style={{ textDecoration: "none" , position: "relative", left: "-20px"}}>
                             {'>>>'} Blog
-                        </TransitionLink>
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/contact" style={{ textDecoration: "none" }}>
+                        <Link to="/contact" style={{ textDecoration: "none" , position: "relative", left: "-20px"}}>
                             {'>>>'} Contact
                         </Link>
                     </li>
@@ -76,13 +75,12 @@ const StyledHeader = styled.div`
     top: 0;
     left: 0;
     align-items: center;
-    width: 12%;
+    width: 10%;
     height: 100vh;
     scroll-behvior: smooth;
     z-index: 10;
     transition-duration: 0.4s;
     transition: background box-shadow ease-in-out;
-    box-shadow: 5px black;
 
     ul {
         padding-top: 100px;
@@ -123,7 +121,7 @@ const Hamburger = styled.button`
 const Bar1 = styled.div`
     width: 35px;
     height: 5px;
-    background-color: purple;
+    background-color: #ffff;
     margin: 6px 0;
     transition: 0.4s;
     border-radius: 10%;
@@ -136,7 +134,7 @@ const Bar1 = styled.div`
 const Bar2 = styled.div`
     width: 35px;
     height: 5px;
-    background-color: purple;
+    background-color: #ffff;
     margin: 6px 0;
     transition: 0.4s;
     border-radius: 10%;
@@ -145,7 +143,7 @@ const Bar2 = styled.div`
         width: 20px;
         height: 20px;
         background-color: transparent;
-        border: solid purple;
+        border: solid #ffff;
         border-width: 5px 0 0 5px;
         transform: rotate(-45deg)
     }
@@ -154,7 +152,7 @@ const Bar2 = styled.div`
 const Bar3 = styled.div`
     width: 35px;
     height: 5px;
-    background-color: purple;
+    background-color: #ffff;
     margin: 6px 0;
     transition: 0.4s;
     opacity: 1;
