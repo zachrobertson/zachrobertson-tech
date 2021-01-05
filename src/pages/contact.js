@@ -1,61 +1,52 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
+
 const Contact = () => {
+
+
+    const selectAllText = (e) => {
+        e.target.select();
+    };
 
     return (
         <Layout>
 
             <ContactHeader>
-                If you have any questions fell free to fill out the form below, or if there is a problem with the site subit an issue on my <Link to="https://github.com/zachrobertson">GitHub</Link>
+                If you have any questions fell free to fill out the form below, or if there is a problem with the site submit an issue on my <a href="https://github.com/zachrobertson">GitHub</a>
             </ContactHeader>
 
             <HorizontalLine />
 
-            <FormWrapper>
-                <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
-                    <input type="hidden" name="bot-field" />
-                    <input type="hidden" name="form-name" value="contact" />
-                <label style={{
-                    fontSize: "50px",
-                }}>
-                    Email :
-                    <input type="email" name="email" style={{
-                        width: "960px",
-                        height: "50px",
-                        margin: "50px",
-                        borderRadius: "10px/10px",
-                    }}/>
-                </label>
-                <br />
-                <label style={{
-                    fontSize: "50px",
-                }}>
-                    Name :
-                    <input type="text" name="name" style={{
-                        width: "960px",
-                        height: "50px",
-                        margin: "50px",
-                        textAnchor: "tops",
-                        borderRadius: "10px/10px",
-                    }}/>
-                </label>
-                <br />
-                <label style={{
-                    fontSize: "50px",
-                }}>
-                    Message :
-                    <input type="text" name="message" style={{
-                        width: "960px",
-                        height: "250px",
-                        margin: "50px",
-                        borderRadius: "10px/10px",
-                    }}/>
-                </label>
-                </form>
-            </FormWrapper>
+            <Form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact" id="contact">
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="contact" />
+            <label >
+                Name :
+                <input type="text" name="name" />
+            </label>
+            <br />
+            <label >
+                Email :
+                <input type="email" name="email" />
+            </label>
+            <br />
+            <label >
+                Message :
+                <textarea name="message" required="true" onClick={selectAllText} onFocus={selectAllText}>Type your message here!</textarea>
+            </label>
+            <br />
+            
+            <input type="button" value={"Submit"} style={{
+                fontFamily : "Consolas",
+                fontSize: "25px",
+                background: "#1f2e2e"
+            }}/>
+            
+            </Form>
+
+            
 
         </Layout>
     )
@@ -67,18 +58,50 @@ const ContactHeader = styled.h1`
     text-align: center;
     font-family: "Consolas";
     padding-top: 25px;
+    font-size: 20px;
 
 `
 
-const FormWrapper = styled.div`
-    position: relative;
+const Form = styled.form`
     font-family: "Consolas";
     display: flex;
     flex-direction: column;
-    padding-top: 10%;
+    position: relative;
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    label {
+        font-size: 20px;
+        text-align: center;
+        padding: 20px;
+
+        input {
+            margin-top: 20px;
+            display: block;
+            align-items: center;
+            width: 420px;
+            height: 50px;
+            border-radius: 10px/10px;
+            padding: 10px;
+            border: 2px solid black;
+            background: #1f2e2e;
+            color: white;
+        }
+
+        textarea {
+            margin-top: 20px;
+            display: block;
+            align-items: center;
+            width: 420px;
+            height: 250px;
+            border-radius: 10px/10px;
+            padding: 10px;
+            color: white;
+            background: #1f2e2e;
+            border: 2px solid black;
+        }
+    }
 `
 
 const HorizontalLine = styled.hr`

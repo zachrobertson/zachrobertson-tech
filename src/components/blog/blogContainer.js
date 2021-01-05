@@ -26,20 +26,20 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #336699;
+    background-color: #1f2e2e;
     font-family: "Consolas";
-    color: #333;
+    color: #ffff;
     margin: 10% 10% 10% 10%;
     text-align: center;
     border-radius: 10px/10px;
 
     p {
         height: auto;
-        color: #333;
+        color: #ffff;
     }
 
     h1 {
-        color: #333;
+        color: #ffff;
     }
 `
 
@@ -47,6 +47,6 @@ const HorizontalLine = styled.hr`
     padding: 0;
     height: 2px;
     width: 90%;
-    background-color: #333;
+    background-color: #ffff;
     border: none;
 `

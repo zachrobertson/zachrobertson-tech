@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import BlogContainer from "../components/blogContainer"
+import BlogContainer from "../components/blog/blogContainer"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 

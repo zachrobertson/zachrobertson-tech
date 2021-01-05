@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { useState } from "react"
+import TransitionLink from "gatsby-plugin-transition-link"
 
 function Header() {
     // Need to update when the url changes
@@ -9,7 +10,7 @@ function Header() {
         var headerShowDefault = true;
     }
     else {
-        var headerShowDefault = false;
+        headerShowDefault = false;
     }
     console.log(window.location.href)
     const menuHoverDefault = false;
@@ -20,7 +21,8 @@ function Header() {
     return (
         <>
             <StyledHeader style={{
-                            backgroundColor: (showHeader ? "rgb(22, 24, 29, 1)" : "transparent")
+                            backgroundColor: (showHeader ? "#1f2e2e" : "transparent"),
+                            boxShadow : (showHeader ? "0 0 10px 10px #363945" : "none")
                         }}>
                 <Hamburger onClick={() => setShowHeader(!showHeader)} style={{
                     zIndex: "5",
@@ -44,14 +46,14 @@ function Header() {
                     display: (showHeader ? "" : "none")
                 }}>
                     <li>
-                        <Link to="/" style={{ textDecoration: "none" }}>
+                        <TransitionLink to="/" style={{ textDecoration: "none" }}>
                             {'>>>'} Home
-                        </Link>
+                        </TransitionLink>
                     </li>
                     <li>
-                        <Link to="/blog" style={{ textDecoration: "none" }}>
+                        <TransitionLink to="/blog" style={{ textDecoration: "none" }}>
                             {'>>>'} Blog
-                        </Link>
+                        </TransitionLink>
                     </li>
                     <li>
                         <Link to="/contact" style={{ textDecoration: "none" }}>
@@ -80,6 +82,7 @@ const StyledHeader = styled.div`
     z-index: 10;
     transition-duration: 0.4s;
     transition: background box-shadow ease-in-out;
+    box-shadow: 5px black;
 
     ul {
         padding-top: 100px;
@@ -91,10 +94,10 @@ const StyledHeader = styled.div`
             a {
                 font-family: "Consolas";
                 font-size: x-large;
-                color: #333;
+                color: #ffff;
 
                 &:visited {
-                    color: #333;
+                    color: #ffff;
                 }
 
                 &:visited:hover {
@@ -120,7 +123,7 @@ const Hamburger = styled.button`
 const Bar1 = styled.div`
     width: 35px;
     height: 5px;
-    background-color: #333;
+    background-color: purple;
     margin: 6px 0;
     transition: 0.4s;
     border-radius: 10%;
@@ -133,7 +136,7 @@ const Bar1 = styled.div`
 const Bar2 = styled.div`
     width: 35px;
     height: 5px;
-    background-color: #333;
+    background-color: purple;
     margin: 6px 0;
     transition: 0.4s;
     border-radius: 10%;
@@ -142,7 +145,7 @@ const Bar2 = styled.div`
         width: 20px;
         height: 20px;
         background-color: transparent;
-        border: solid #333;
+        border: solid purple;
         border-width: 5px 0 0 5px;
         transform: rotate(-45deg)
     }
@@ -151,7 +154,7 @@ const Bar2 = styled.div`
 const Bar3 = styled.div`
     width: 35px;
     height: 5px;
-    background-color: #333;
+    background-color: purple;
     margin: 6px 0;
     transition: 0.4s;
     opacity: 1;

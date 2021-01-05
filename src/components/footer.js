@@ -51,7 +51,7 @@ const StyledFooter = styled.footer`
     align-items: center;
     text-align: center;
     display: inline-block;
-    background: #f7f2ee;
+    background: #1f2e2e;
     width: 100%;
     height: 5rem;
     border: none;
@@ -62,7 +62,7 @@ const FooterText = styled.div`
     font-family: "Consolas";
     display: inline-block;
     font-size: 1.25rem;
-    color: #333;
+    color: #ffff;
     left: 50%;
 `
 

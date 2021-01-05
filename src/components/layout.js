@@ -12,6 +12,7 @@ const Global = createGlobalStyle`
     font-family: "Consolas";
     font-size: 100%;
     color: #333;
+    background-color: #679898;
   }
 `
 
