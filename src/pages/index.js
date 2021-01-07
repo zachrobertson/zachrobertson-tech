@@ -48,12 +48,12 @@ const IndexPage = ({
             <HorizontalLine />
             <ul style={{listStyleType : "circle", textAlign: "left"}}>
               <li key="ToDo1">
-                Make website mobile friendly
+                Make website actually work on mobile, sorry about that
               </li>
               <li key="ToDo2">
                 LittleBrother v0.0 alpha release :
                 <br />
-                <span> This is my OpenSource dashcamera project built around the ESP32 microcontroller</span>
+                <span> This is my open source dashboard camera project built around the ESP32 microcontroller</span>
               </li>
               <li key="ToDo3">
                 Blog post on how to incorporate MoneyButton into a JavaScript project
@@ -74,7 +74,7 @@ export const pageQuery = graphql`
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
-            excerpt(pruneLength: 250, format: HTML)
+            excerpt(pruneLength: 1000, format: HTML)
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
               slug
@@ -95,10 +95,12 @@ const IntroHeader = styled.h1`
 
   span {
     display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
   }
   
   div {
-    font-family: "Consolas";
+    font-family: "Tiempos Text";
     font-size: 20px;
     width: 50%;
     text-align: center;

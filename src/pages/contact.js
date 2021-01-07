@@ -39,7 +39,7 @@ const Contact = () => {
             <br />
             
             <Submit type="submit" value="SUBMIT" style={{
-                fontFamily : "Consolas",
+                fontFamily : "Tiempos Text",
                 fontSize: "20px",
                 background: "#1f2e2e",
                 border: "2px solid black",
@@ -60,14 +60,14 @@ export default Contact
 
 const ContactHeader = styled.h1`
     text-align: center;
-    font-family: "Consolas";
+    font-family: "Tiempos Text";
     padding-top: 25px;
     font-size: 20px;
 
 `
 
 const Form = styled.form`
-    font-family: "Consolas";
+    font-family: "Tiempos Text";
     display: flex;
     flex-direction: column;
     position: relative;
@@ -81,6 +81,8 @@ const Form = styled.form`
         padding: 20px;
 
         input {
+            font-family: "Tiempos Text";
+            font-size: 20px;
             margin-top: 20px;
             display: block;
             align-items: center;
@@ -106,6 +108,8 @@ const Form = styled.form`
             background: #1f2e2e;
             border: 2px solid black;
             box-shadow: 5px 5px 5px 5px black;
+            font-family: "Tiempos Text";
+            font-size: 20px;
         }
     }
 `

@@ -36,10 +36,12 @@ export const pageQuery = graphql`
       edges {
         node {
           htmlAst
+          excerpt(pruneLength: 1000, format: HTML)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            author
           }
         }
       }
@@ -51,7 +53,7 @@ const PostContainer = styled.div`
 `
 
 const BlogHeader = styled.h1`
-  font-family: "Consolas";
+  font-family: "Tiempos Text";
   text-align: center;
 `
 

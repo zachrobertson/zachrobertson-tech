@@ -21,6 +21,7 @@ export default function Template({ data }) {
           <div>
             
             <span>{frontmatter.title} </span>
+            <br />
             {frontmatter.date + " : " + frontmatter.author}
             <HorizontalLine />
           </div>
@@ -54,13 +55,13 @@ const IntroHeader = styled.h1`
   text-align: center;
   padding: 20px;
   display: inline-block;
+  width: 100%;
 
   span {
     display: inline-block;
   }
   
   div {
-    font-family: "Consolas";
     font-size: 20px;
     width: 50%;
     text-align: center;
@@ -96,6 +97,7 @@ const HorizontalLine = styled.div`
 `
 
 const PostContainer = styled.div`
+    font-family: "Tiempos Text";
     background: #1f2e2e;
     color: #ffff;
     padding: 25px;
@@ -108,13 +110,37 @@ const PostContainer = styled.div`
     p {
         line-height: 1.5;
         font-size: 15px;
+
+        code {
+          background: gray;
+          border-radius: 10px/10px;
+          padding: 5px;
+        }
+
+        a {
+          text-decoration: none;
+
+          &:hover:visited {
+            color: red;
+          }
+    
+          &:visited {
+            color: purple;
+          }
+        }
     }
 
     hr {
-        width: 90%;
+      border: none;
+    }
+  
+    hr::before {
+      content: '***';
+      display: block;
+      text-align: center;
     }
 
-    h2 {
-        text-align: center;
+    h2, h3, h4, h5 {
+      text-align: center;
     }
 `

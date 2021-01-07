@@ -10,9 +10,8 @@ const BlogContainer = ({ data }) => {
             textDecoration: "none"
         }}>
         <Container>
-            <p>{data.frontmatter.title}</p>
-            <p>{"By : " + data.frontmatter.author + ", " + data.frontmatter.date}</p>
-
+            <span>{data.frontmatter.title}</span>
+            <div>{"By : " + data.frontmatter.author + ", " + data.frontmatter.date}</div>
             <HorizontalLine />
             <p dangerouslySetInnerHTML={{__html: data.excerpt}}/>
         </Container>
@@ -30,7 +29,7 @@ const Container = styled.div`
     align-items: center;
     width: 100%;
     background-color: #1f2e2e;
-    font-family: "Consolas";
+    font-family: "Tiempos Text";
     color: #ffff;
     margin: 10% 10% 10% 10%;
     border-radius: 10px/10px;
@@ -38,12 +37,43 @@ const Container = styled.div`
     box-shadow: 5px 5px 5px 5px black;
 
     p {
-        height: auto;
         color: #ffff;
+        margin: 20px;
+
+        code {
+            background: gray;
+            border-radius: 10px/10px;
+            padding: 5px;
+        }
     }
 
     h1 {
         color: #ffff;
+    }
+
+    h2, h3 {
+        text-align: center;
+    }
+
+    hr {
+        border: none;
+    }
+    
+    hr::before {
+    content: '***';
+    display: block;
+    text-align: center;
+    }
+
+    span {
+        font-size: 35px;
+        margin: 10px;
+        text-decoration: uppercase;
+    }
+
+    div {
+        font-size: 20px;
+        margin: 20px;
     }
 `
 

@@ -77,7 +77,7 @@ const StyledHeader = styled.div`
     align-items: center;
     width: 10%;
     height: 100vh;
-    scroll-behvior: smooth;
+    scroll-behavior: smooth;
     z-index: 10;
     transition-duration: 0.4s;
     transition: background box-shadow ease-in-out;
@@ -90,7 +90,7 @@ const StyledHeader = styled.div`
             padding: 50% 0 50% 0;
             
             a {
-                font-family: "Consolas";
+                font-family: "Tiempos Text";
                 font-size: x-large;
                 color: #ffff;
 

@@ -56,10 +56,11 @@ const StyledFooter = styled.footer`
     height: 5rem;
     border: none;
     z-index: 1;
+    margin-top: 50px;
 `
 
 const FooterText = styled.div`
-    font-family: "Consolas";
+    font-family: "Tiempos Text";
     display: inline-block;
     font-size: 1.25rem;
     color: #ffff;

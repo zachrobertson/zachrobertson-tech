@@ -9,10 +9,12 @@ const Global = createGlobalStyle`
     background: #363945;
     margin: 0;
     position: relative;
-    font-family: "Consolas";
+    font-family: "Tiempos Text";
     font-size: 100%;
     color: #333;
     background-color: #679898;
+    height: auto;
+    line-height: 1.5;
   }
 `
 
