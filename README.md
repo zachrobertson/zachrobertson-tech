@@ -44,17 +44,17 @@ This is the typical layout of a Gatsby project, if you have not worked with gats
 
 Below is a breakdown of what each file in the src directory and its sub-directories.
 
-### Components
+## Components
 
 This directory holds all of the JavaScript files that produce reusable react components. This means these files can be imported and used to add new features or style to a page or another component.
 
-- #### Blog
+### Blog
 
-  - ##### blogContainer.js
+#### blogContainer.js
 
 > Used on the index and blog pages to hold excerpts of blog posts for clean display, linking, and when there are more searching.
 
-  - ##### blogTemplate.js
+#### blogTemplate.js
 
 > the only place this is referenced is in `gatsby-node.js` where it is used to produce all of the blog posts from their respective markdown files in the `/markdown-pages` sub-directory.
 
