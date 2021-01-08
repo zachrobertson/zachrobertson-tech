@@ -57,7 +57,9 @@ Below is a breakdown of what each file in the src directory and its sub-director
 
 This directory holds all of the JavaScript files that produce reusable react components. This means these files can be imported and used to add new features or style to a page or another component.
 
-- ### Blog
+### Blog
+
+  Directory for all of the components to make and contain blogs on other pages of the site
 
 - #### blogContainer.js
 
@@ -95,9 +97,9 @@ This directory holds all of the JavaScript files that produce reusable react com
 
 This is just a directory to hold all the image files we might need.
 
-- ### Blog
+### Blog
 
-This is where we hold the images for our blogs for easy sorting, each post has its own sub-directory.
+  This is where we hold the images for our blogs for easy sorting, each post has its own sub-directory.
 
 ## Markdown-pages
 
