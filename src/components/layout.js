@@ -11,8 +11,8 @@ const Global = createGlobalStyle`
     position: relative;
     font-family: "Tiempos Text";
     font-size: 100%;
-    color: #333;
-    background-color: #679898;
+    color: #ffff;
+    background-color: #0d0d0d;
     height: auto;
     line-height: 1.5;
   }

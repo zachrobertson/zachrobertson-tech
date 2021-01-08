@@ -22,7 +22,7 @@ const Profile = () => {
     return (
             <Img fixed={data.placeholderImage.childImageSharp.fixed} style={{
                 borderRadius: "50%",
-                border: "5px solid #1f2e2e",
+                border: "5px solid #ffff",
                 WebkitBorderRadius: "500px",
                 MozBorderRadius: "500px",
                 padding: 0

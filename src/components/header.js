@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { useState } from "react"
+import MoneyButton from "@moneybutton/react-money-button"
+
 
 function Header() {
     // Need to update when the url changes
@@ -14,14 +15,15 @@ function Header() {
 
     const menuHoverDefault = false;
 
-    const [showHeader, setShowHeader] = useState(headerShowDefault)
-    const [menuHover, setMenuHover] = useState(menuHoverDefault)
-    
+    const [showHeader, setShowHeader] = useState(headerShowDefault);
+    const [menuHover, setMenuHover] = useState(menuHoverDefault);
+
     return (
         <>
+        <script src="https://www.moneybutton.com/moneybutton.js"></script>
             <StyledHeader style={{
-                            backgroundColor: (showHeader ? "#1f2e2e" : "transparent"),
-                            boxShadow : (showHeader ? "0px 0px 5px 10px black" : "none")
+                            backgroundColor: (showHeader ? "#4d4d4d" : "transparent"),
+                            boxShadow: (showHeader ? '0px 0px 10px 5px black' : "none")
                         }}>
                 <Hamburger onClick={() => setShowHeader(!showHeader)} style={{
                     zIndex: "5",
@@ -45,21 +47,42 @@ function Header() {
                     display: (showHeader ? "" : "none")
                 }}>
                     <li>
-                        <Link to="/" style={{ textDecoration: "none" , position: "relative", left: "-20px"}}>
+                        <Link to="/" style={{ textDecoration: "none" , position: "relative", left: "-20px", textTransform: "uppercase"}}>
                             {'>>>'} Home
                         </Link>
                     </li>
                     <li>
-                        <Link to="/blog" style={{ textDecoration: "none" , position: "relative", left: "-20px"}}>
+                        <Link to="/blog" style={{ textDecoration: "none" , position: "relative", left: "-20px", textTransform: "uppercase"}}>
                             {'>>>'} Blog
                         </Link>
                     </li>
                     <li>
-                        <Link to="/contact" style={{ textDecoration: "none" , position: "relative", left: "-20px"}}>
+                        <Link to="/contact" style={{ textDecoration: "none" , position: "relative", left: "-20px", textTransform: "uppercase"}}>
                             {'>>>'} Contact
                         </Link>
                     </li>
+                    <span>
+                    Donate
+                        <br />
+                    with
+                        <br /> 
+                    MoneyButton 
+                        <br />
+                    Here!
+                    </span>
+                    <li style={{
+                        alignItems: "center",
+                        paddingTop: "10%",
+                    }}>
+                        <MoneyButton 
+                            to="zachrobertson@moneybutton.com"
+                            editable={true}
+                            currency="USD"
+                            type="tip"
+                        />
+                    </li>
                 </ul>
+                
             </StyledHeader>
         </>
     )
@@ -75,7 +98,7 @@ const StyledHeader = styled.div`
     top: 0;
     left: 0;
     align-items: center;
-    width: 10%;
+    width: 15%;
     height: 100vh;
     scroll-behavior: smooth;
     z-index: 10;
@@ -83,25 +106,38 @@ const StyledHeader = styled.div`
     transition: background box-shadow ease-in-out;
 
     ul {
-        padding-top: 100px;
+        padding-top: 20%;
 
         li {
             list-style: none;
-            padding: 50% 0 50% 0;
+            padding: 0 0 20% 10%;
             
             a {
                 font-family: "Tiempos Text";
                 font-size: x-large;
                 color: #ffff;
 
-                &:visited {
+                :visited {
                     color: #ffff;
                 }
 
-                &:visited:hover {
+                :visited:hover {
+                    color: purple;
+                }
+                
+                :hover {
                     color: purple;
                 }
             }
+
+            
+        }
+
+        span {
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 2;
+            font-size: x-large;
         }
     }
 

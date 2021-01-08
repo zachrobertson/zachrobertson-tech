@@ -1,6 +1,6 @@
 ---
 slug: "/blog/build-a-gatsby-site"
-title: "How I built this website and why it matters"
+title: "Building a Gatsby site with no React Experience"
 date: "2020-12-18"
 author: "Zach Robertson"
 ---

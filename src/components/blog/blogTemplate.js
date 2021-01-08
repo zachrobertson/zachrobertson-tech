@@ -55,7 +55,7 @@ const IntroHeader = styled.h1`
   text-align: center;
   padding: 20px;
   display: inline-block;
-  width: 100%;
+  text-transform: uppercase;
 
   span {
     display: inline-block;
@@ -73,6 +73,7 @@ const IntroHeader = styled.h1`
     span {
         font-size: 35px;
         margin-bottom: 25px;
+        line-height: 1.5;
     }
 
     a {
@@ -91,25 +92,25 @@ const IntroHeader = styled.h1`
 const HorizontalLine = styled.div`
     display: flex;
     height: 2px;
-    background-color: #333;
+    background-color: #ffff;
     margin: 25px;
     width: 90%;
 `
 
 const PostContainer = styled.div`
     font-family: "Tiempos Text";
-    background: #1f2e2e;
+    background: #4d4d4d;
     color: #ffff;
     padding: 25px;
     display: flex;
     flex-direction: column;
     position: relative;
     border-radius: 10px/10px;
-    box-shadow: 5px 5px 5px 5px black;
+    box-shadow: 0px 0px 10px 5px black;
 
     p {
         line-height: 1.5;
-        font-size: 15px;
+        font-size: 20px;
 
         code {
           background: gray;
@@ -119,13 +120,18 @@ const PostContainer = styled.div`
 
         a {
           text-decoration: none;
+          color: purple;
 
-          &:hover:visited {
+          :hover:visited {
             color: red;
           }
     
-          &:visited {
+          :visited {
             color: purple;
+          }
+
+          :hover {
+            color: red;
           }
         }
     }
@@ -138,6 +144,7 @@ const PostContainer = styled.div`
       content: '***';
       display: block;
       text-align: center;
+      color: #ffff;
     }
 
     h2, h3, h4, h5 {

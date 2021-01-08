@@ -41,7 +41,7 @@ const Contact = () => {
             <Submit type="submit" value="SUBMIT" style={{
                 fontFamily : "Tiempos Text",
                 fontSize: "20px",
-                background: "#1f2e2e",
+                background: "#4d4d4d",
                 border: "2px solid black",
                 borderRadius: "10px/10px",
                 color: "white",
@@ -91,9 +91,9 @@ const Form = styled.form`
             border-radius: 10px/10px;
             padding: 10px;
             border: 2px solid black;
-            background: #1f2e2e;
+            background: #4d4d4d;
             color: white;
-            box-shadow: 5px 5px 5px 5px black;
+            box-shadow: 0px 0px 10px 5px black;
         }
 
         textarea {
@@ -105,9 +105,9 @@ const Form = styled.form`
             border-radius: 10px/10px;
             padding: 10px;
             color: white;
-            background: #1f2e2e;
+            background: #4d4d4d;
             border: 2px solid black;
-            box-shadow: 5px 5px 5px 5px black;
+            box-shadow: 0px 0px 10px 5px black;
             font-family: "Tiempos Text";
             font-size: 20px;
         }
@@ -115,7 +115,7 @@ const Form = styled.form`
 `
 
 const Submit = styled.input`
-    box-shadow: 5px 5px 5px 5px black;
+    box-shadow: 0px 0px 10px 5px black;
     
     :hover {
         cursor: pointer;
@@ -128,6 +128,6 @@ const HorizontalLine = styled.hr`
     display: block;
     padding: 0;
     height: 2px;
-    background-color: #333;
+    background-color: #ffff;
     border: none;
 `

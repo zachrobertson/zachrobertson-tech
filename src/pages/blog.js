@@ -61,6 +61,6 @@ const HorizontalLine = styled.hr`
   display: block;
   padding: 0;
   height: 2px;
-  background-color: #333;
+  background-color: #ffff;
   border: none;
 `

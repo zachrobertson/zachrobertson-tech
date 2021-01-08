@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Profile from "../components/profile"
 import BlogContainer from "../components/blog/blogContainer"
+import Helmet from "react-helmet"
 
 
 const IndexPage = ({ 
@@ -23,7 +24,7 @@ const IndexPage = ({
               <Profile/> 
             </span>
             <div>
-              <span>Zach Robertson:</span>
+              <span>ZACH ROBERTSON :</span>
               <br />
                 I am a software developer who likes to build things, and contribute to the open source community. I do everything from AI with python to 3D modeling with Fusion360. Sometimes I write about my projects on my <Link to="/blog" style={{ textDecoration: "none" }}>blog</Link>.
               Follow me on twitter <a href="https://twitter.com/ZachRTech" style={{ textDecoration: "none" }}>@ZachRTech</a> or check out my work on <a href="https://github.com/zachrobertson" style={{ textDecoration: "none" }}>GitHub</a>
@@ -35,14 +36,14 @@ const IndexPage = ({
           margin: "50px",
           fontSize: "35px"
         }}>
-          Recent Blog Posts:
+          RECENT BLOG POSTS :
         </h2>
           {Posts}     
 
         <ToDo>
           
             <h1>
-              Upcoming projects:
+              UPCOMING PROJECTS :
             </h1>
 
             <HorizontalLine />
@@ -60,8 +61,7 @@ const IndexPage = ({
               </li>
             </ul>
           
-        </ToDo>   
-      
+        </ToDo>
       </Layout>
     </>
   )
@@ -115,13 +115,18 @@ const IntroHeader = styled.h1`
     }
 
     a {
+      color: purple;
 
-      &:hover:visited {
+      :hover:visited {
         color: red;
       }
 
-      &:visited {
+      :visited {
         color: purple;
+      }
+
+      :hover {
+        color: red;
       }
     }
   }
@@ -131,7 +136,7 @@ const HorizontalLine = styled.hr`
   display: block;
   margin: 20px;
   height: 2px;
-  background-color: #333;
+  background-color: #ffff;
   border: none;
 `
 

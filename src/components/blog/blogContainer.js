@@ -12,8 +12,8 @@ const BlogContainer = ({ data }) => {
         <Container>
             <span>{data.frontmatter.title}</span>
             <div>{"By : " + data.frontmatter.author + ", " + data.frontmatter.date}</div>
-            <HorizontalLine />
-            <p dangerouslySetInnerHTML={{__html: data.excerpt}}/>
+            < HorizontalLine />
+            <ContentContainer dangerouslySetInnerHTML={{__html: data.excerpt}}/>
         </Container>
         </Link>
     )
@@ -28,22 +28,51 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #1f2e2e;
+    background-color: #4d4d4d;
     font-family: "Tiempos Text";
     color: #ffff;
     margin: 10% 10% 10% 10%;
     border-radius: 10px/10px;
     padding-left: 20px;
-    box-shadow: 5px 5px 5px 5px black;
+    box-shadow: 0px 0px 10px 5px black;
+    line-height: 2;
 
-    p {
-        color: #ffff;
-        margin: 20px;
+    span {
+        font-size: 35px;
+        text-transform: uppercase;
+        margin-top: 10px;
+        
+    }
 
-        code {
-            background: gray;
-            border-radius: 10px/10px;
-            padding: 5px;
+    div {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+`
+
+const ContentContainer = styled.p`
+    color: #ffff;
+    margin: 20px;
+
+    code {
+        background: gray;
+        border-radius: 10px/10px;
+        padding: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        color: purple;
+
+        :hover:visited {
+            color: red;
+            }
+        :visited {
+            color: purple;
+            }
+        :hover {
+            color: red;
+            }
         }
     }
 
@@ -60,20 +89,10 @@ const Container = styled.div`
     }
     
     hr::before {
-    content: '***';
-    display: block;
-    text-align: center;
-    }
-
-    span {
-        font-size: 35px;
-        margin: 10px;
-        text-decoration: uppercase;
-    }
-
-    div {
-        font-size: 20px;
-        margin: 20px;
+        content: '***';
+        display: block;
+        text-align: center;
+        color: #ffff;
     }
 `
 

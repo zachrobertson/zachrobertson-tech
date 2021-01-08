@@ -51,7 +51,7 @@ const StyledFooter = styled.footer`
     align-items: center;
     text-align: center;
     display: inline-block;
-    background: #1f2e2e;
+    background: #4d4d4d;
     width: 100%;
     height: 5rem;
     border: none;
@@ -67,6 +67,8 @@ const FooterText = styled.div`
     left: 50%;
 
     a {
+        color: purple;
+        
         :hover {
             color: red;
         }
