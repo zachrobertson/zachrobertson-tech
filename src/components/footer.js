@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
@@ -68,7 +68,7 @@ const FooterText = styled.div`
 
     a {
         color: purple;
-        
+
         :hover {
             color: red;
         }

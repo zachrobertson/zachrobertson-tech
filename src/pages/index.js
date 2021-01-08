@@ -4,8 +4,6 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Profile from "../components/profile"
 import BlogContainer from "../components/blog/blogContainer"
-import Helmet from "react-helmet"
-
 
 const IndexPage = ({ 
   data: {

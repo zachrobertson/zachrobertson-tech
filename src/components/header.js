@@ -6,13 +6,14 @@ import MoneyButton from "@moneybutton/react-money-button"
 
 function Header() {
     // Need to update when the url changes
-    if (window.location.href === "http://localhost:8000/") {
-        var headerShowDefault = true;
+    if (window) {
+        if (window.location.href === "http://localhost:8000/") {
+            var headerShowDefault = true;
+        }
+        else {
+            headerShowDefault = false;
+        }
     }
-    else {
-        headerShowDefault = false;
-    }
-
     const menuHoverDefault = false;
 
     const [showHeader, setShowHeader] = useState(headerShowDefault);
