@@ -98,7 +98,6 @@ const HorizontalLine = styled.div`
 `
 
 const PostContainer = styled.div`
-    font-family: "Tiempos Text";
     background: #4d4d4d;
     color: #ffff;
     padding: 25px;

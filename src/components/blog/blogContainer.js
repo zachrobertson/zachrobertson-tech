@@ -29,7 +29,6 @@ const Container = styled.div`
     align-items: center;
     width: 100%;
     background-color: #4d4d4d;
-    font-family: "Tiempos Text";
     color: #ffff;
     margin: 10% 10% 10% 10%;
     border-radius: 10px/10px;

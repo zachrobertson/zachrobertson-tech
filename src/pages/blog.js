@@ -53,7 +53,6 @@ const PostContainer = styled.div`
 `
 
 const BlogHeader = styled.h1`
-  font-family: "Tiempos Text";
   text-align: center;
 `
 

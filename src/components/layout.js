@@ -9,12 +9,11 @@ const Global = createGlobalStyle`
     background: #363945;
     margin: 0;
     position: relative;
-    font-family: "Tiempos Text";
-    font-size: 100%;
     color: #ffff;
     background-color: #0d0d0d;
     height: auto;
     line-height: 1.5;
+    font-family: Tahoma;
   }
 `
 
@@ -26,7 +25,6 @@ const Layout = ({ children }) => {
             <div style={{
                 margin: "0 auto",
                 maxWidth: 960,
-                minHeight: "100vh"
             }}>
                 {children}
             </div>
