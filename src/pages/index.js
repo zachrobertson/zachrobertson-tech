@@ -36,7 +36,10 @@ const IndexPage = ({
         }}>
           RECENT BLOG POSTS :
         </h2>
-          {Posts}     
+        <div>
+          {Posts}
+        </div>
+               
 
         <ToDo>
           
