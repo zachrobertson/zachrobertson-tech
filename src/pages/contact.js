@@ -64,6 +64,21 @@ const ContactHeader = styled.h1`
     padding-top: 25px;
     font-size: 20px;
 
+    a {
+        text-decoration: none;
+        color: purple;
+        :hover {
+            color: red;
+        }
+
+        :hover:visited {
+            color: red;
+        }
+
+        :visited {
+            color: purple;
+        }
+    }
 `
 
 const Form = styled.form`
