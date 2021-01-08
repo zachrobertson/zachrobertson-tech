@@ -48,9 +48,13 @@ Below is a breakdown of what each file in the src/ sub-directories is for.
 
 > This directory holds all of the JavaScript files that produce reusable react components. This means these files can be imported and used to add new features or style to a page or another component.
 
-#### blogContainer.js
+#### Blog
+
+##### blogContainer.js
 
 > Used on the index and blog pages to hold excerpts of blog posts for cleaner display and search.
+
+##### blogTemplate.js
 
 #### footer.js
 
@@ -82,7 +86,7 @@ Below is a breakdown of what each file in the src/ sub-directories is for.
 
 ### Markdown-pages
 
-> Markdown files are used to automatically create blog posts, if we add a markdown file in this directory it will automatically create a blog post when we rebuild the site. 
+> Markdown files are used to automatically create blog posts, if we add a markdown file in this directory it will automatically create a blog post when we rebuild the site.
 
 ### Pages
 
