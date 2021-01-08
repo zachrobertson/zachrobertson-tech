@@ -7,12 +7,12 @@ const Profile = () => {
         query {
         placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
             childImageSharp {
-            fixed(width: 100, height: 100) {
+            fixed(width: 200, height: 200, jpegQuality: 100) {
                 ...GatsbyImageSharpFixed
-            }
+                }
             }
         }
-        }
+    }
     `)
 
     if (!data?.placeholderImage?.childImageSharp?.fixed) {
@@ -22,9 +22,9 @@ const Profile = () => {
     return (
             <Img fixed={data.placeholderImage.childImageSharp.fixed} style={{
                 borderRadius: "50%",
-                border: "5px solid white",
-                webkitBorderRadius: "500px",
-                mozBorderRadius: "500px",
+                border: "5px solid #ffff",
+                WebkitBorderRadius: "500px",
+                MozBorderRadius: "500px",
                 padding: 0
             }} />
     )

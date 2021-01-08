@@ -1,50 +1,56 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
+
 const Contact = () => {
+
+
+    const selectAllText = (e) => {
+        e.target.select();
+    };
 
     return (
         <Layout>
 
             <ContactHeader>
-                If you have any questions fell free to fill out the form below, or if there is a problem with the site subit an issue on my <Link to="https://github.com/zachrobertson">GitHub</Link>
+                If you have any questions fell free to fill out the form below, or if there is a problem with the site submit an issue on my <a href="https://github.com/zachrobertson">GitHub</a>
             </ContactHeader>
 
-            <FormWrapper>
-                <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
-                    <input type="hidden" name="bot-field" />
-                    <input type="hidden" name="form-name" value="contact" />
-                <label>
-                    Email :
-                    <input type="email" name="email" style={{
-                        width: "960px",
-                        height: "50px",
-                        margin: "25px",
-                    }}/>
-                </label>
-                <br />
-                <label>
-                    Name :
-                    <input type="text" name="name" style={{
-                        width: "960px",
-                        height: "50px",
-                        margin: "25px",
-                        textAnchor: "tops"
-                    }}/>
-                </label>
-                <br />
-                <label>
-                    Message :
-                    <input type="text" name="message" style={{
-                        width: "960px",
-                        height: "250px",
-                        margin: "25px",
-                    }}/>
-                </label>
-                </form>
-            </FormWrapper>
+            <HorizontalLine />
+
+            <Form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact" id="contact">
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="contact" />
+            <label >
+                Name :
+                <input type="text" name="name" required={true}/>
+            </label>
+            <br />
+            <label >
+                Email :
+                <input type="email" name="email" required={true}/>
+            </label>
+            <br />
+            <label >
+                Message :
+                <textarea name="message" required={true} onClick={selectAllText} onFocus={selectAllText} defaultValue={"Type your message here!"} />
+            </label>
+            <br />
+            
+            <Submit type="submit" value="SUBMIT" style={{
+                fontFamily : "Tiempos Text",
+                fontSize: "20px",
+                background: "#4d4d4d",
+                border: "2px solid black",
+                borderRadius: "10px/10px",
+                color: "white",
+                padding: "15px"
+            }} />
+            
+            </Form>
+
+            
 
         </Layout>
     )
@@ -54,22 +60,89 @@ export default Contact
 
 const ContactHeader = styled.h1`
     text-align: center;
-    font-family: "Lucida Console";
+    font-family: "Tiempos Text";
     padding-top: 25px;
+    font-size: 20px;
 
+    a {
+        text-decoration: none;
+        color: purple;
+        :hover {
+            color: red;
+        }
+
+        :hover:visited {
+            color: red;
+        }
+
+        :visited {
+            color: purple;
+        }
+    }
 `
 
-const FormWrapper = styled.div`
-    position: relative;
-    font-family: "Lucida Console";
+const Form = styled.form`
+    font-family: "Tiempos Text";
     display: flex;
     flex-direction: column;
-    padding-top: 10%;
+    position: relative;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
-    br {
-        margin: 20%;
+
+    label {
+        font-size: 20px;
+        text-align: center;
+        padding: 20px;
+
+        input {
+            font-family: "Tiempos Text";
+            font-size: 20px;
+            margin-top: 20px;
+            display: block;
+            align-items: center;
+            width: 420px;
+            height: 50px;
+            border-radius: 10px/10px;
+            padding: 10px;
+            border: 2px solid black;
+            background: #4d4d4d;
+            color: white;
+            box-shadow: 0px 0px 10px 5px black;
+        }
+
+        textarea {
+            margin-top: 20px;
+            display: block;
+            align-items: center;
+            width: 420px;
+            height: 250px;
+            border-radius: 10px/10px;
+            padding: 10px;
+            color: white;
+            background: #4d4d4d;
+            border: 2px solid black;
+            box-shadow: 0px 0px 10px 5px black;
+            font-family: "Tiempos Text";
+            font-size: 20px;
+        }
     }
+`
+
+const Submit = styled.input`
+    box-shadow: 0px 0px 10px 5px black;
+    
+    :hover {
+        cursor: pointer;
+        color: white;
+    }
+
+`
+
+const HorizontalLine = styled.hr`
+    display: block;
+    padding: 0;
+    height: 2px;
+    background-color: #ffff;
+    border: none;
 `

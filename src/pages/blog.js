@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import BlogContainer from "../components/blogContainer"
+import BlogContainer from "../components/blog/blogContainer"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
@@ -31,29 +31,29 @@ const Blog = ({
 export default Blog
   
 export const pageQuery = graphql`
-    query {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 250)
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              slug
-              title
-            }
-            rawMarkdownBody
+  query {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          htmlAst
+          excerpt(pruneLength: 1000, format: HTML)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            author
           }
         }
       }
     }
-  `
+}
+`
 
 const PostContainer = styled.div`
 `
 
 const BlogHeader = styled.h1`
-  font-family: "Lucida Console";
+  font-family: "Tiempos Text";
   text-align: center;
 `
 
@@ -61,6 +61,6 @@ const HorizontalLine = styled.hr`
   display: block;
   padding: 0;
   height: 2px;
-  background-color: black;
+  background-color: #ffff;
   border: none;
 `

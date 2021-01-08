@@ -1,11 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
-import Layout from "../components/layout"
+import Layout from "../components/indexLayout"
 import Profile from "../components/profile"
-import BlogContainer from "../components/blogContainer"
-import { Media } from "react-bootstrap"
-
+import BlogContainer from "../components/blog/blogContainer"
 
 const IndexPage = ({ 
   data: {
@@ -14,35 +12,54 @@ const IndexPage = ({
 }) => {
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
-    .map(edge => <BlogContainer data={edge.node}/>)
+    .map(edge => <BlogContainer data={edge.node} key={edge.node.frontmatter.slug}/>)
 
   return (
     <>
       <Layout>
-        <ToDo>
-          <ul>
-            <h2>this is a list</h2>
-            <li>
-              this is a list item
-            </li>
-          </ul>
-        </ToDo>
         <IntroHeader>
+            <span>
+              <Profile/> 
+            </span>
+            <div>
+              <span>ZACH ROBERTSON :</span>
+              <br />
+                I am a software developer who likes to build things, and contribute to the open source community. I do everything from AI with python to 3D modeling with Fusion360. Sometimes I write about my projects on my <Link to="/blog" style={{ textDecoration: "none" }}>blog</Link>.
+              Follow me on twitter <a href="https://twitter.com/ZachRTech" style={{ textDecoration: "none" }}>@ZachRTech</a> or check out my work on <a href="https://github.com/zachrobertson" style={{ textDecoration: "none" }}>GitHub</a>
+              <HorizontalLine /> 
+            </div>
+        </IntroHeader>         
+        <h2 style={{
+          textAlign: "center",
+          margin: "50px",
+          fontSize: "35px"
+        }}>
+          RECENT BLOG POSTS :
+        </h2>
+          {Posts}     
+
+        <ToDo>
           
             <h1>
-              <Profile/> 
+              UPCOMING PROJECTS :
             </h1>
-            <div>
-              <h2>Zach Robertson:</h2>
-              I am a software developer who likes to build things, and contribute to the open source community. I do everything from AI with python to 3D modeling with Fusion360. Sometimes I write about my projects on my <Link to="/blog" style={{ textDecoration: "none" }}>blog</Link>.
-              Follow me on twitter <Link to="https://twitter.com/ZachRTech" style={{ textDecoration: "none" }}>@ZachRTech</Link> or check out my work on <Link to="https://github.com/zachrobertson" style={{ textDecoration: "none" }}>GitHub</Link>
-            </div>
-        </IntroHeader>
 
-        <HorizontalLine />  
+            <HorizontalLine />
+            <ul style={{listStyleType : "circle", textAlign: "left"}}>
+              <li key="ToDo1">
+                Make website actually work on mobile, sorry about that
+              </li>
+              <li key="ToDo2">
+                LittleBrother v0.0 alpha release :
+                <br />
+                <span> This is my open source dashboard camera project built around the ESP32 microcontroller</span>
+              </li>
+              <li key="ToDo3">
+                Blog post on how to incorporate MoneyButton into a JavaScript project
+              </li>
+            </ul>
           
-          {Posts}        
-      
+        </ToDo>
       </Layout>
     </>
   )
@@ -55,14 +72,13 @@ export const pageQuery = graphql`
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
-            id
-            excerpt(pruneLength: 250)
+            excerpt(pruneLength: 1000, format: HTML)
             frontmatter {
               date(formatString: "MMMM DD, YYYY")
               slug
               title
+              author
             }
-            rawMarkdownBody
           }
         }
       }
@@ -70,32 +86,45 @@ export const pageQuery = graphql`
   `
 
 const IntroHeader = styled.h1`
-  positon: absolute;
+  position: relative;
   text-align: center;
-  padding: 20px;
   display: inline-block;
+  vertical-align: center;
 
-  h1 {
+  span {
     display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
   }
   
   div {
-    font-family: "Lucida Console";
-    font-size: 15px;
+    font-family: "Tiempos Text";
+    font-size: 20px;
     width: 50%;
     text-align: center;
     line-height: 150%;
     display: inline-block;
     padding-left: 10%;
+    vertical-align: bottom;
+
+    span {
+      font-size: 35px;
+      margin: 20px;
+    }
 
     a {
+      color: purple;
 
-      &:hover:visited {
+      :hover:visited {
         color: red;
       }
 
-      &:visited {
-        color: black;
+      :visited {
+        color: purple;
+      }
+
+      :hover {
+        color: red;
       }
     }
   }
@@ -103,24 +132,26 @@ const IntroHeader = styled.h1`
 
 const HorizontalLine = styled.hr`
   display: block;
-  padding: 0;
+  margin: 20px;
   height: 2px;
-  background-color: black;
+  background-color: #ffff;
   border: none;
 `
 
 const ToDo = styled.div`
-  position: absolute;
-  display: flex; 
-  flex-direction: column;
-  background: white;
-  align-items: center;
-  margin-top: 0;
-  right: 0;
-  height: 100%;
-  width: 25%;
+  background: transparent;
+  padding: 10%;
+  padding-top: 10px;
+  border-radius: 10px/10px;
+  WebKitBorderRadius: 10px/10px;
+  text-align: center;
+  height: 250px;
+  margin: 10% 10% 10% 10%;
 
-  @media (max-width: 1024px) {
-    display: none !important;
+  ul {
+    
+    li {
+      padding: 10px;
+    }
   }
 `;

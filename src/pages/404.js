@@ -7,7 +7,8 @@ const Default404Page = () => {
             <h1 style={{
                 textAlign: "center"
             }}>
-                404 page not found!
+                404. 
+                page not found!
             </h1>
             <br/>
             <h5 style={{
