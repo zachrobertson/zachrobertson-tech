@@ -57,13 +57,7 @@ function Header() {
                         </Link>
                     </li>
                     <span>
-                    Donate
-                        <br />
-                    with
-                        <br /> 
-                    MoneyButton 
-                        <br />
-                    Here!
+                    Donate Here!
                     </span>
                     <li style={{
                         alignItems: "center",
@@ -93,7 +87,7 @@ const StyledHeader = styled.div`
     top: 0;
     left: 0;
     align-items: center;
-    width: 15%;
+    width: 25rem;
     height: 100vh;
     scroll-behavior: smooth;
     z-index: 10;

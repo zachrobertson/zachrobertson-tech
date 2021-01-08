@@ -45,7 +45,7 @@ const IndexPage = ({
             </h1>
 
             <HorizontalLine />
-            <ul style={{listStyleType : "circle", textAlign: "left"}}>
+            <ul >
               <li key="ToDo1">
                 Make website actually work on mobile, sorry about that
               </li>
@@ -149,7 +149,8 @@ const ToDo = styled.div`
   margin: 10% 10% 10% 10%;
 
   ul {
-    
+    list-style-type: circle;
+    text-align: left;
     li {
       padding: 10px;
     }
