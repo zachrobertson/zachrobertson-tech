@@ -140,4 +140,5 @@ const HorizontalLine = styled.hr`
     height: 2px;
     background-color: #ffff;
     border: none;
+    width: 90%;
 `

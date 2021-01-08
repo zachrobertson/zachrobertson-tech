@@ -57,43 +57,47 @@ Below is a breakdown of what each file in the src directory and its sub-director
 
 This directory holds all of the JavaScript files that produce reusable react components. This means these files can be imported and used to add new features or style to a page or another component.
 
-### Blog
+- ### Blog
 
 - #### blogContainer.js
 
-  > Used on the index and blog pages to hold excerpts of blog posts for clean display, linking, and when there are more searching.
+  > Used on the index and blog pages to hold excerpts of blog posts for clean display, linking, and eventually searching.
 
 - #### blogTemplate.js
 
-  > the only place this is referenced is in `gatsby-node.js` where it is used to produce all of the blog posts from their respective markdown files in the `/markdown-pages` sub-directory.
+  > the only place this is referenced is in `gatsby-node.js` where it is used to produce all of the blog posts from their respective markdown files in the `/markdown-pages` sub-directory, this makes it very easy to add new blog posts with just one new markdown file.
 
-#### footer.js
+### footer.js
 
 > This is just a classic footer, imported in the layout component for easy use on all pages.
 
-#### header.js
+### header.js
 
-> A non standard header. This is actually the left-side navbar and hanburger menu but it serves as my header. It is imported in the layout component for easy use on all pages.
+> A non standard header. This is actually the left-side navbar and hamburger menu but it serves as my header. It is imported in the layout component for easy use on all pages.
 
-#### indexHeader.js
+### indexHeader.js
 
 > A special version of the header to be used on the index page only. The only difference is the default showHeader variable is set to true instead of false.
 
-#### indexLayout.js
+### layout.js
 
-> A special layout for the index page so that we can use the indexHeader component instead of the standard header. The only difference between this and the standard layout is the header.
+> This is a react component to style all the pages in the same way. I use this is define global styling variables.
 
-#### layout.js
+### indexLayout.js
 
-> This is the standard layout component, it gives the style and extra functionality to all the pages other than the index page. 
+> A special layout for the index page so that we can use the indexHeader component instead of the standard header. The only difference between this and the standard layout is the header. (Note: there is probably a better way to do this, but you can read about the reason for doing it this way instead of programmatically on my [blog](https://zachrobertson.tech/blog/build-a-gatsby-site/).
 
-#### profile.js
+### profile.js
 
->A react component for the picture on the index page.
+>A react component for the profile picture on the index page and blog posts.
 
 ## Images
 
 This is just a directory to hold all the image files we might need.
+
+- ### Blog
+
+This is where we hold the images for our blogs for easy sorting, each post has its own sub-directory.
 
 ## Markdown-pages
 

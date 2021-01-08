@@ -35,6 +35,7 @@ const Container = styled.div`
     padding-left: 20px;
     box-shadow: 0px 0px 10px 5px black;
     line-height: 2;
+    font-family: Tahoma;
 
     span {
         font-size: 35px;

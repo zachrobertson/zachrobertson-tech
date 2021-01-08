@@ -16,7 +16,7 @@ const Blog = ({
     return (
         <Layout>
             <BlogHeader>
-              {'>>>'} Blog
+              Blog
             </BlogHeader>
 
             <HorizontalLine />
@@ -54,6 +54,8 @@ const PostContainer = styled.div`
 
 const BlogHeader = styled.h1`
   text-align: center;
+  text-transform: uppercase;
+  font-size: xxx-large;
 `
 
 const HorizontalLine = styled.hr`
@@ -62,4 +64,5 @@ const HorizontalLine = styled.hr`
   height: 2px;
   background-color: #ffff;
   border: none;
+  width: 90%;
 `
