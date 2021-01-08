@@ -3,6 +3,15 @@
 This is a site built with gatsby, and designed by me!
 It is layed out the same way as any other gatsby site but let me walk you through it.
 
+## Running
+
+To download and and run this site on your local machine, first make sure you have Node and the gatsby-cli installed then run:
+
+1. `git clone https://github.com/zachrobertson/zachrobertson-tech.git`
+2. `cd /zachrobertson-tech`
+3. `npm install`
+4. `gatsby develop`
+
 ## Layout
 
     .
