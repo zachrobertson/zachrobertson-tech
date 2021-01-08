@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
-import Layout from "../components/layout"
+import Layout from "../components/indexLayout"
 import Profile from "../components/profile"
 import BlogContainer from "../components/blog/blogContainer"
 
