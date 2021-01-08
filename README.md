@@ -40,7 +40,7 @@ It is layed out the same way as any other gatsby site but let me walk you throug
     ├── package-lock.json
     └── package.json
   
-This is the typical layout of a Gatsby project, if you have not worked with gatsby before it would be best to go take a look at their quick-start [here]("https://www.gatsbyjs.com/docs/quick-start/").
+This is the typical layout of a Gatsby project, if you have not worked with gatsby before it would be best to go take a look at their quick-start [here](https://www.gatsbyjs.com/docs/quick-start/).
 
 Below is a breakdown of what each file in the src/ sub-directories is for.
 
