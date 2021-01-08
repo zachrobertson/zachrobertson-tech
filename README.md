@@ -1,4 +1,4 @@
-# zachrobertson.tech
+# [zachrobertson.tech](https://zachrobertson.tech)
 
 This is a site built with gatsby, and designed by me!
 It is layed out the same way as any other gatsby site but let me walk you through it.
@@ -42,19 +42,21 @@ It is layed out the same way as any other gatsby site but let me walk you throug
   
 This is the typical layout of a Gatsby project, if you have not worked with gatsby before it would be best to go take a look at their quick-start [here](https://www.gatsbyjs.com/docs/quick-start/).
 
-Below is a breakdown of what each file in the src/ sub-directories is for.
+Below is a breakdown of what each file in the src directory and its sub-directories.
 
-- ### Components
+### Components
 
-> This directory holds all of the JavaScript files that produce reusable react components. This means these files can be imported and used to add new features or style to a page or another component.
+This directory holds all of the JavaScript files that produce reusable react components. This means these files can be imported and used to add new features or style to a page or another component.
 
-  - #### Blog
+#### Blog
 
 ##### blogContainer.js
 
-> Used on the index and blog pages to hold excerpts of blog posts for cleaner display and search.
+> Used on the index and blog pages to hold excerpts of blog posts for clean display, linking, and when there are more searching.
 
 ##### blogTemplate.js
+
+> the only place this is referenced is in `gatsby-node.js` where it is used to produce all of the blog posts from their respective markdown files in the `/markdown-pages` sub-directory.
 
 #### footer.js
 
@@ -86,8 +88,8 @@ Below is a breakdown of what each file in the src/ sub-directories is for.
 
 ### Markdown-pages
 
-> Markdown files are used to automatically create blog posts, if we add a markdown file in this directory it will automatically create a blog post when we rebuild the site.
+Markdown files are used to automatically create blog posts, if we add a markdown file in this directory it will automatically create a blog post when we rebuild the site.
 
 ### Pages
 
-> This is the main file in our `src/` directory. If you are familiar with Gatsby you will be aware that for each file in our pages directory a page will be created at `yourcustomurl.xyz/page` where `page` is replaced by the name of the JS file (index is the home page, and sub-directory JS files do not create pages)
+This is the main file in our `src/` directory. If you are familiar with Gatsby you will be aware that for each file in our pages directory a page will be created at `yourcustomurl.xyz/page` where `page` is replaced by the name of the JS file (index is the home page, and sub-directory JS files do not create pages)
