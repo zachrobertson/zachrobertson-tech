@@ -109,3 +109,5 @@ This is the main file in our `src/` directory. If you are familiar with Gatsby y
 
 1. Make site mobile friendly
 2. Refactor some styled components to be more reusable and global
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/44c58fff-8491-4763-ad04-35d4b805b16f/deploy-status)](https://app.netlify.com/sites/objective-allen-902ef2/deploys)
