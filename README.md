@@ -95,11 +95,7 @@ This directory holds all of the JavaScript files that produce reusable react com
 
 ## Images
 
-This is just a directory to hold all the image files we might need.
-
-### Blog
-
-  This is where we hold the images for our blogs for easy sorting, each post has its own sub-directory.
+This is just a directory to hold all the image files we might need. There is also a sub-directory for each blog post to help keep everything clean.
 
 ## Markdown-pages
 
@@ -108,3 +104,8 @@ Markdown files are used to automatically create blog posts, if we add a markdown
 ## Pages
 
 This is the main file in our `src/` directory. If you are familiar with Gatsby you will be aware that for each file in our pages directory a page will be created at `yourcustomurl.xyz/page` where `page` is replaced by the name of the JS file (index is the home page, and sub-directory JS files do not create pages)
+
+## To Do
+
+1. Make site mobile friendly
+2. Refactor some styled components to be more reusable and global
