@@ -104,7 +104,7 @@ const PostContainer = styled.div`
     flex-direction: column;
     position: relative;
     
-    p {
+    p, ol {
         line-height: 2;
         font-size: 20px;
         border-radius: 10px/10px;

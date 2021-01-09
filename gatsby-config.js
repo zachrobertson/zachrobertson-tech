@@ -22,6 +22,7 @@ module.exports = {
     `gatsby-remark-copy-linked-files`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
+    
     {
       resolve: `gatsby-transformer-remark`,
       options: {
