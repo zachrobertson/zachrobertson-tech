@@ -4,18 +4,31 @@ title: "Building a Gatsby site with no React Experience"
 date: "2020-12-18"
 author: "Zach Robertson"
 ---
+
 ## GatsbyJS
 
 *********************************
 
-GatsbyJS is the JavaScript framework I used to build this website, it is advertised as a quick method to build a very fast static website. Gatsby is built with React, a JavaScript library created by Facebook to make user interfaces, which means you can leverage all the functionality of React in your website as well. As someone who had no JavaScript experience it wasn't the easiest thing to build a website from scratch, but Gatsby was probably the easiest way to do it.
-
-I wanted to write a post about my experience learning to use Gatsby as a beginner, some tips for those people in the same positon as me, as well as the things that are still a work in progress or took me a long time to figure out.
-
-As you can obviously see this site is not the pinnacle of beauty but it works and can be easily updated any time, so I think of it as a good starting point. If you want to see some examples of really good modern gatsby sites take a look at [this GatsbyJS showcase](https://www.gatsbyjs.com/showcase/)
+Gatsby is a fast, easy to use JavaScript framework, specifically for making static sites. It is built on React and before I built this site I had never touched JavaScript or React. I want to share my experience and some tips Ive learned along the way. Also check out [this GatsbyJS showcase](https://www.gatsbyjs.com/showcase/)
 
 ### Getting Started
 
 *********************************
+The best way to make a gatsby site in my opinon is to start with the default to learn how each of the components work.
+To get the default gatsby site working make sure NodeJS is installed then run this in a terminal (Windows PowerShell):
 
-After installing [NodeJS](https://nodejs.org/en/) install the [gatsby-cli](https://www.npmjs.com/package/gatsby-cli) using the npm command `npm install -g gatsby-cli`. `npm` stands for Node Package Manager and it is a simple way to install global or local node packages, the `-g` command stand for global, usually when we install node packages it will just be for the project we are currently working on but for gatsby we want to be able to use it on multiple projects if we decide we want to make more websites, or to have multiple instances of the same site for development.
+1. `npm install -g gatsby-cli`
+2. `gatsby new new-gatsby-site`
+3. `cd new-gatsby-site`
+
+After this you should have a new repository named `new-gatsby-site`. Now run `gatsby develop` and navigate to [http://localhost:8000](http://localhost:8000) in your chosen browser, you should see the following:
+
+![Index Screenshot](../images/buildingGatsbySite/starter-default.png)
+
+If you see this screen congratulations, you have successfully started a gatsby development environment with a working website. Now you probably want to make it look like your own, to start I would suggest getting familiar with what is happening in each of the default page files. Here is the code for the home page.
+
+![Index VScode](../images/buildingGatsbySite/index-vscode.png)
+
+If you have never used React or JavaScript before, this might look confusing but allow me to explain. In this file we have a React component called `IndexPage` that is being exported, and since it is in the pages sub-directory it will use the exported React component to create a page with the domain route the same as the file name (with the index file being the home page). A react component can do a lot of things but in this simple example we are using it to just export JSX which is a different syntax of JavaScript that uses HTML tags
+
+The first thing we have are the imports, we start with a React import because that is what we are using to construct the `IndexPage` component. Then we have a Link import from gatsby, this is just a useful react component for linking between pages on your site (it is not for external links, you will get a warning if you use if for that reason just use an a tag instead. E.g `<a href="website.xy/z"></a>`). The last three imports are other React components that are reused in multiple places, so they are in the `components` sub-directory.

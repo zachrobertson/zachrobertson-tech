@@ -19,7 +19,6 @@ export default function Template({ data }) {
           </span>
         </Link>
           <div>
-            
             <span>{frontmatter.title} </span>
             <br />
             {frontmatter.date + " : " + frontmatter.author}
@@ -98,23 +97,30 @@ const HorizontalLine = styled.div`
 `
 
 const PostContainer = styled.div`
-    background: #4d4d4d;
+    background: transparent;
     color: #ffff;
     padding: 25px;
     display: flex;
     flex-direction: column;
     position: relative;
-    border-radius: 10px/10px;
-    box-shadow: 0px 0px 10px 5px black;
-
+    
     p {
-        line-height: 1.5;
+        line-height: 2;
         font-size: 20px;
+        border-radius: 10px/10px;
 
         code {
           background: gray;
           border-radius: 10px/10px;
           padding: 5px;
+        }
+
+        span {
+            borer-radius: 10px/10px;
+            
+          img {
+            border-radius: 10px/10px;
+          }
         }
 
         a {
