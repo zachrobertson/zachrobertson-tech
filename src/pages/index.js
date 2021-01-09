@@ -24,8 +24,10 @@ const IndexPage = ({
             <div>
               <span>ZACH ROBERTSON :</span>
               <br />
-                I am a software developer who likes to build things, and contribute to the open source community. I do everything from AI with python to 3D modeling with Fusion360. Sometimes I write about my projects on my <Link to="/blog" style={{ textDecoration: "none" }}>blog</Link>.
-              Follow me on twitter <a href="https://twitter.com/ZachRTech" style={{ textDecoration: "none" }}>@ZachRTech</a> or check out my work on <a href="https://github.com/zachrobertson" style={{ textDecoration: "none" }}>GitHub</a>
+              <p>
+                I like writing code and messing with tech hardware. Sometimes I write about my projects on my <Link to="/blog" style={{ textDecoration: "none" }}>blog</Link>.
+                Follow me on twitter <a href="https://twitter.com/ZachRTech" style={{ textDecoration: "none" }}>@ZachRTech</a> or check out my work on <a href="https://github.com/zachrobertson" style={{ textDecoration: "none" }}>GitHub</a>
+              </p>
               <HorizontalLine /> 
             </div>
         </IntroHeader>         
@@ -101,7 +103,6 @@ const IntroHeader = styled.h1`
   }
   
   div {
-    font-family: "Tiempos Text";
     font-size: 20px;
     width: 50%;
     text-align: center;
@@ -145,10 +146,11 @@ const ToDo = styled.div`
   background: transparent;
   padding: 10%;
   padding-top: 10px;
+  padding-bottom: 10%;
+  height: auto;
   border-radius: 10px/10px;
   WebKitBorderRadius: 10px/10px;
   text-align: center;
-  height: 250px;
   margin: 10% 10% 10% 10%;
 
   ul {

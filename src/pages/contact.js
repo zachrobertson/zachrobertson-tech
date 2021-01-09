@@ -39,7 +39,6 @@ const Contact = () => {
             <br />
             
             <Submit type="submit" value="SUBMIT" style={{
-                fontFamily : "Tiempos Text",
                 fontSize: "20px",
                 background: "#4d4d4d",
                 border: "2px solid black",
@@ -60,7 +59,6 @@ export default Contact
 
 const ContactHeader = styled.h1`
     text-align: center;
-    font-family: "Tiempos Text";
     padding-top: 25px;
     font-size: 20px;
 
@@ -82,7 +80,6 @@ const ContactHeader = styled.h1`
 `
 
 const Form = styled.form`
-    font-family: "Tiempos Text";
     display: flex;
     flex-direction: column;
     position: relative;
@@ -96,7 +93,6 @@ const Form = styled.form`
         padding: 20px;
 
         input {
-            font-family: "Tiempos Text";
             font-size: 20px;
             margin-top: 20px;
             display: block;
@@ -123,7 +119,6 @@ const Form = styled.form`
             background: #4d4d4d;
             border: 2px solid black;
             box-shadow: 0px 0px 10px 5px black;
-            font-family: "Tiempos Text";
             font-size: 20px;
         }
     }
@@ -145,4 +140,5 @@ const HorizontalLine = styled.hr`
     height: 2px;
     background-color: #ffff;
     border: none;
+    width: 90%;
 `

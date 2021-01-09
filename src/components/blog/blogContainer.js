@@ -28,14 +28,14 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #4d4d4d;
-    font-family: "Tiempos Text";
+    background-color: transparent;
     color: #ffff;
     margin: 10% 10% 10% 10%;
     border-radius: 10px/10px;
     padding-left: 20px;
     box-shadow: 0px 0px 10px 5px black;
     line-height: 2;
+    font-family: Tahoma;
 
     span {
         font-size: 35px;
@@ -53,11 +53,17 @@ const Container = styled.div`
 const ContentContainer = styled.p`
     color: #ffff;
     margin: 20px;
+    line-height: 2;
+    font-size: 20px;
 
     code {
         background: gray;
         border-radius: 10px/10px;
         padding: 5px;
+    }
+
+    img {
+        border-radius: 10px/10px;
     }
 
     a {

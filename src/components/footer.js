@@ -53,14 +53,13 @@ const StyledFooter = styled.footer`
     display: inline-block;
     background: #4d4d4d;
     width: 100%;
-    height: 5rem;
+    height: auto;
     border: none;
     z-index: 1;
     margin-top: 50px;
 `
 
 const FooterText = styled.div`
-    font-family: "Tiempos Text";
     display: inline-block;
     font-size: 1.25rem;
     color: #ffff;

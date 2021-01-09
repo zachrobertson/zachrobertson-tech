@@ -42,33 +42,30 @@ function Header() {
                     display: (showHeader ? "" : "none")
                 }}>
                     <li>
-                        <Link to="/" style={{ textDecoration: "none" , position: "relative", left: "-20px", textTransform: "uppercase"}}>
-                            {'>>>'} Home
+                        <Link to="/">
+                            HOME
                         </Link>
                     </li>
                     <li>
-                        <Link to="/blog" style={{ textDecoration: "none" , position: "relative", left: "-20px", textTransform: "uppercase"}}>
-                            {'>>>'} Blog
+                        <Link to="/blog">
+                            BLOG
                         </Link>
                     </li>
                     <li>
-                        <Link to="/contact" style={{ textDecoration: "none" , position: "relative", left: "-20px", textTransform: "uppercase"}}>
-                            {'>>>'} Contact
+                        <Link to="/contact">
+                            CONTACT
                         </Link>
                     </li>
-                    <span>
-                    Donate Here!
-                    </span>
-                    <li style={{
-                        alignItems: "center",
-                        paddingTop: "10%",
-                    }}>
-                        <MoneyButton 
-                            to="zachrobertson@moneybutton.com"
-                            editable={true}
-                            currency="USD"
-                            type="tip"
-                        />
+                    <li>
+                        <p>DONATE</p>
+                        <div>
+                            <MoneyButton 
+                                to="zachrobertson@moneybutton.com"
+                                editable={true}
+                                currency="USD"
+                                type="tip"
+                            />
+                        </div>
                     </li>
                 </ul>
                 
@@ -87,7 +84,7 @@ const StyledHeader = styled.div`
     top: 0;
     left: 0;
     align-items: center;
-    width: 25rem;
+    width: 20rem;
     height: 100vh;
     scroll-behavior: smooth;
     z-index: 10;
@@ -95,16 +92,36 @@ const StyledHeader = styled.div`
     transition: background box-shadow ease-in-out;
 
     ul {
-        padding-top: 20%;
 
         li {
             list-style: none;
-            padding: 0 0 20% 10%;
+            font-size: xxx-large;
+            padding-top: 30%;
+            position: relative;
+            right: -25px;
+
+            p {
+                color: #ffff;
+                text-decoration: none;
+                text-align: left;
+                position: relative;
+                margin-top: 0px;
+                left: -20px;
+            }
+
+            div {
+                margin-top: 0;
+                position: relative;
+                top: -20px;
+                left: -10px;
+            }
             
             a {
-                font-family: "Tiempos Text";
-                font-size: x-large;
                 color: #ffff;
+                text-decoration: none;
+                text-align: center;
+                position: relative;
+                left: -20px;
 
                 :visited {
                     color: #ffff;
@@ -118,15 +135,6 @@ const StyledHeader = styled.div`
                     color: purple;
                 }
             }
-
-            
-        }
-
-        span {
-            text-align: center;
-            text-transform: uppercase;
-            line-height: 2;
-            font-size: x-large;
         }
     }
 
