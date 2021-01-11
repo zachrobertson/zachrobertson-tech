@@ -2,6 +2,9 @@ import React from "react"
 import Header from "./header"
 import Footer from "./footer"
 import { createGlobalStyle } from "styled-components"
+import { useMediaQuery } from "react-responsive"
+
+
 
 
 const Global = createGlobalStyle`
@@ -18,13 +21,16 @@ const Global = createGlobalStyle`
 `
 
 const Layout = ({ children }) => {
+    
+    const isTabletOrMobile = useMediaQuery({ maxDeviceWidth: 1224});
+    
     return (
         <>
         <Global />
             <Header />
             <div style={{
                 margin: "0 auto",
-                maxWidth: 960,
+                maxWidth: (isTabletOrMobile ? 720 : 960)
             }}>
                 {children}
             </div>

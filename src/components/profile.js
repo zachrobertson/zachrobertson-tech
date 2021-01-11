@@ -7,7 +7,7 @@ const Profile = () => {
         query {
         placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
             childImageSharp {
-            fixed(width: 200, height: 200, jpegQuality: 100) {
+            fixed(width: 150, height: 150, jpegQuality: 100) {
                 ...GatsbyImageSharpFixed
                 }
             }

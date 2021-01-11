@@ -2,11 +2,14 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import { useMediaQuery } from "react-responsive"
 
 
 
 
 const Footer = () => {
+
+    const isTabletOrMobile = useMediaQuery({ maxDeviceWidth : 1224});
 
     const images = useStaticQuery(graphql`
     query {
@@ -29,7 +32,9 @@ const Footer = () => {
 
 
     return (
-        <StyledFooter>
+        <StyledFooter style={{
+            fontSize : (isTabletOrMobile ? "10px" : "20px"),
+        }}>
             <FooterText>
                 This is an open source website
                 <StyledLink href="https://github.com/zachrobertson">
@@ -61,10 +66,8 @@ const StyledFooter = styled.footer`
 
 const FooterText = styled.div`
     display: inline-block;
-    font-size: 1.25rem;
     color: #ffff;
     left: 50%;
-
     a {
         color: purple;
 

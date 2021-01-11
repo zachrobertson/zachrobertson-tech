@@ -1,7 +1,8 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import { useMediaQuery } from "react-responsive"
 import styled from "styled-components"
-import Layout from "../components/indexLayout"
+import Layout from "../components/layout"
 import Profile from "../components/profile"
 import BlogContainer from "../components/blog/blogContainer"
 
@@ -14,10 +15,15 @@ const IndexPage = ({
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <BlogContainer data={edge.node} key={edge.node.frontmatter.slug}/>)
 
+
+  const isTabletOrMobile = useMediaQuery({ maxDeviceWidth : 1224 });
+  
   return (
     <>
       <Layout>
-        <IntroHeader>
+        <IntroHeader style={{
+          display : (isTabletOrMobile ? "flex" : "inline-block")
+        }}>
             <span>
               <Profile/> 
             </span>
@@ -93,7 +99,6 @@ export const pageQuery = graphql`
 const IntroHeader = styled.h1`
   position: relative;
   text-align: center;
-  display: inline-block;
   vertical-align: center;
 
   span {
