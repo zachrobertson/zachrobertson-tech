@@ -60,7 +60,7 @@ const StyledFooter = styled.footer`
     width: 100%;
     height: auto;
     border: none;
-    z-index: 1;
+    z-index: 0;
     margin-top: 50px;
 `
 

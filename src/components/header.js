@@ -1,9 +1,23 @@
-import React, { useState } from "react"
+import React, { useState, Component, useEffect } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { useMediaQuery } from "react-responsive"
-import MoneyButton from "@moneybutton/react-money-button"
+import '@twetch/pay'
 
+async function Donate( props ) {
+    const USDAmount = props
+    const response = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin-cash-sv');
+    const json = await response.json();
+    const currentBSVPrice = json.market_data.current_price.usd;
+    const BSVAmount = (USDAmount / currentBSVPrice);
+
+    window.twetchPay.pay({
+        outputs : [{
+            to : 'zachrobertson@moneybutton.com',
+            amount : BSVAmount
+        }]
+    })
+}
 
 function Header() {
 
@@ -13,14 +27,13 @@ function Header() {
         var headerShowDefault = typeof window !== 'undefined' ? window.location.href === "http://localhost:8000/" : "";
     }
     else {
-        var headerShowDefault = false;
+        headerShowDefault = false;
     }
     const menuHoverDefault = false;
     const [showHeader, setShowHeader] = useState(headerShowDefault);
     const [menuHover, setMenuHover] = useState(menuHoverDefault);
-    
-    
-    
+    const [showDonate, setShowDonate] = useState(false);
+
     return (
         <>
         
@@ -69,15 +82,19 @@ function Header() {
                         </Link>
                     </li>
                     <li key={'donate'}>
-                        <p>DONATE</p>
-                        <div>
-                            <MoneyButton 
-                                to="zachrobertson@moneybutton.com"
-                                editable={true}
-                                currency="USD"
-                                type="tip"
-                            />
-                        </div>
+                        <p onClick={() => setShowDonate(!showDonate)} on={() => setShowDonate(!showDonate)}>
+                        <DownArrow />
+                        DONATE
+                        </p>
+                        <DonateContainer style={{
+                            display: (showDonate ? "flex" : "none"),
+                            flexDirection: "column",
+                            padding: "10%",
+                        }}>
+                            <input id="Donation" defaultValue={'Enter USD Amount'} onFocus={() => {document.getElementById('Donation').focus(); document.getElementById('Donation').select();}}></input>
+                            <br />
+                            <button onClick={() => Donate(document.getElementById('Donation').value)}>Donate</button>
+                        </DonateContainer>
                     </li>
                 </ul>
                 </>
@@ -127,28 +144,50 @@ function Header() {
 
 export default Header
 
+const DownArrow = styled.div`
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: solid #ffff;
+    border-width: 5px 0 0 5px;
+    transform: rotate(-135deg);
+
+    :hover {
+        color: purple;
+    }
+`
+
+const DonateContainer = styled.div`
+    width: 100%;
+    background: #0d0d0d;
+    border-radius: 10px/10px;
+    width: 50%;
+
+    br {
+        height: 10px;
+    }
+`
 
 const StyledHeader = styled.div`
     position: fixed;
-    display: flex;
-    flex-direction: column;
     top: 0;
     left: 0;
     align-items: center;
     width: 20rem;
     height: 100vh;
     scroll-behavior: smooth;
-    z-index: 10;
+    z-index: 1;
     transition-duration: 0.4s;
     transition: background box-shadow ease-in-out;
 
     ul {
+        position: relative;
+        left: 20px;
 
         li {
             list-style: none;
             font-size: xxx-large;
             padding-top: 30%;
-            position: relative;
             right: -25px;
 
             p {
@@ -158,6 +197,11 @@ const StyledHeader = styled.div`
                 position: relative;
                 margin-top: 0px;
                 left: -20px;
+
+                :hover {
+                    color: purple;
+                    cursor: pointer;
+                }
             }
 
             div {
