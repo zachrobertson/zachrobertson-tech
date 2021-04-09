@@ -1,197 +1,171 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
-import MoneyButton from "@moneybutton/react-money-button"
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+import NavBarLinks from './navbarlinks';
+
+require('typeface-roboto-mono')
+
+const HeaderBody = styled.h1`
+    width: 100%;
+    margin: 0;
+    background: #C4C4C4;
 
 
-function Header() {
-    // Need to update when the url changes
+    height: 70px;
+    left: 0px;
+    top: 0px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+
+    a {
+        text-decoration: none;
+    }
+
+`
+
+const Toggle = styled.div`
+  display: none;
+  height: 100%;
+  cursor: pointer;
+  padding: 0 10vw;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`
+
+const PythonTerminal = styled.span`
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    padding-right: 10px;
+
+    display: flex;
+    flex-direction: row;
+
+    color: #a0a0a0;
+`
+
+const HeaderTitle = styled.span`
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    padding-right: 100px;
+
+    display: flex;
+    flex-direction: row;
+
+    color: #000000;
+`
+
+const Navbox = styled.div`
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 10vh;
+    background-color: #fff;
+    transition: all 0.3s ease-in;
+    top: 8vh;
+    left: ${props => (props.open ? "-100%" : "0")};
+  }
+`
+
+const Hamburger = styled.div`
+    background-color: #111;
+    width: 30px;
+    height: 3px;
+    transition: all .3s linear;
+    align-self: center;
+    position: relative;
+    transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+
+    ::before,
+    ::after {
+        width: 30px;
+        height: 3px;
+        background-color: #111;
+        content: "";
+        position: absolute;
+        transition: all 0.3s linear;
+    }
+
+    ::before {
+        transform: ${props =>
+            props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
+        top: -10px;
+    }
+
+    ::after {
+        opacity: ${props => (props.open ? "0" : "1")};
+        transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
+        top: 10px;
+    }
+`
+
+
+export default function Header() {
+
+    const useWindowWidth = () => {
+        const isBrowser = typeof window !== 'undefined'
+        const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0)
+      
+        useEffect(() => {
+          if (!isBrowser) return false
+      
+          const handleResize = () => setWidth(window.innerWidth)
+          window.addEventListener('resize', handleResize)
+      
+          return () => {
+            window.removeEventListener('resize', handleResize)
+          }
+        })
+      
+        return width
+    }
+
+    const [navbarOpen, setNavbarOpen] = useState(false);
     
-    const headerShowDefault = false;
-    const menuHoverDefault = false;
+    const width = useWindowWidth();
 
-    const [showHeader, setShowHeader] = useState(headerShowDefault);
-    const [menuHover, setMenuHover] = useState(menuHoverDefault);
+    const mobile = width <= 760;
 
     return (
-        <>
-        <script src="https://www.moneybutton.com/moneybutton.js"></script>
-            <StyledHeader style={{
-                            backgroundColor: (showHeader ? "#4d4d4d" : "transparent"),
-                            boxShadow: (showHeader ? '0px 0px 10px 5px black' : "none")
-                        }}>
-                <Hamburger onClick={() => setShowHeader(!showHeader)} style={{
-                    zIndex: "5",
-                    display: (showHeader ? "" : "none")
-                }} onMouseOver={() => setMenuHover(true)} onMouseLeave={() => setMenuHover(false)}>
-                    <Bar1></Bar1>
-                    <Bar2></Bar2>
-                    <Bar3></Bar3>
-                </Hamburger>
-                <Hamburger onClick={() => setShowHeader(!showHeader)} style={{
-                    display: (showHeader ? "none" : "")
-                }} onMouseOver={() => setMenuHover(true)} onMouseLeave={() => setMenuHover(false)}>
-                    <Bar1></Bar1>
-                    <Bar2 style={{
-                        borderWidth: (menuHover ? "0 5px 5px 0" : ""),
-                        transform: (menuHover ? "rotate(-45deg)" : ""),
-                    }}></Bar2>
-                    <Bar3></Bar3>
-                </Hamburger>
-                <ul style={{
-                    display: (showHeader ? "" : "none")
-                }}>
-                    <li>
-                        <Link to="/">
-                            HOME
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/blog">
-                            BLOG
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/contact">
-                            CONTACT
-                        </Link>
-                    </li>
-                    <li>
-                        <p>DONATE</p>
-                        <div>
-                            <MoneyButton 
-                                to="zachrobertson@moneybutton.com"
-                                editable={true}
-                                currency="USD"
-                                type="tip"
-                            />
-                        </div>
-                    </li>
-                </ul>
-                
-            </StyledHeader>
-        </>
+        <HeaderBody>
+            <PythonTerminal>{'>>>'}</PythonTerminal>
+            <Link to='/'>
+                <HeaderTitle>zachrobertson.tech</HeaderTitle>
+            </Link>
+            <NavBarLinks />
+            <Toggle
+                navbarOpen={navbarOpen}
+                onClick={ () => setNavbarOpen(!navbarOpen) }
+            >
+                { navbarOpen ? <Hamburger open />: <Hamburger />}
+            </Toggle>
+            
+            { navbarOpen ? (
+                <Navbox>
+                    <NavBarLinks/>
+                </Navbox>
+            ): (
+                <Navbox open>
+                    <NavBarLinks />
+                </Navbox>
+            )}
+        </HeaderBody>
     )
 }
-
-export default Header
-
-
-const StyledHeader = styled.div`
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    left: 0;
-    align-items: center;
-    width: 20rem;
-    height: 100vh;
-    scroll-behavior: smooth;
-    z-index: 10;
-    transition-duration: 0.4s;
-    transition: background box-shadow ease-in-out;
-
-    ul {
-
-        li {
-            list-style: none;
-            font-size: xxx-large;
-            padding-top: 30%;
-            position: relative;
-            right: -25px;
-
-            p {
-                color: #ffff;
-                text-decoration: none;
-                text-align: left;
-                position: relative;
-                margin-top: 0px;
-                left: -20px;
-            }
-
-            div {
-                margin-top: 0;
-                position: relative;
-                top: -20px;
-                left: -10px;
-            }
-            
-            a {
-                color: #ffff;
-                text-decoration: none;
-                text-align: center;
-                position: relative;
-                left: -20px;
-
-                :visited {
-                    color: #ffff;
-                }
-
-                :visited:hover {
-                    color: purple;
-                }
-                
-                :hover {
-                    color: purple;
-                }
-            }
-        }
-    }
-
-`
-
-const Hamburger = styled.button`
-    outline: none;
-    align-items: left;
-    position: relative;
-    right: 30%;
-    top: 3%;
-    border-radius: 10%;
-    border: transparent;
-    background: transparent;
-    transition-duration: 0.4s;
-`
-const Bar1 = styled.div`
-    width: 35px;
-    height: 5px;
-    background-color: #ffff;
-    margin: 6px 0;
-    transition: 0.4s;
-    border-radius: 10%;
-
-    ${Hamburger}:hover & {
-        opacity: 0;
-    }
-`
-
-const Bar2 = styled.div`
-    width: 35px;
-    height: 5px;
-    background-color: #ffff;
-    margin: 6px 0;
-    transition: 0.4s;
-    border-radius: 10%;
-
-    ${Hamburger}:hover & {
-        width: 20px;
-        height: 20px;
-        background-color: transparent;
-        border: solid #ffff;
-        border-width: 5px 0 0 5px;
-        transform: rotate(-45deg)
-    }
-`
-
-const Bar3 = styled.div`
-    width: 35px;
-    height: 5px;
-    background-color: #ffff;
-    margin: 6px 0;
-    transition: 0.4s;
-    opacity: 1;
-    border-radius: 10%;
-
-    ${Hamburger}:hover & {
-        opacity: 0;
-    }
-`

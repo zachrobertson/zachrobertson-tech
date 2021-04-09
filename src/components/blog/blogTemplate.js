@@ -35,18 +35,18 @@ export default function Template({ data }) {
 
 
 export const pageQuery = graphql`
-query($slug: String!) {
-  markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-    html
-    frontmatter {
-      date(formatString: "MMMM DD, YYYY")
-      slug
-      title
-      author
+    query($slug: String!) {
+        markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+            html
+            frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            author
+            }
+            html
+        }
     }
-    html
-  }
-}
 `
 
 const IntroHeader = styled.h1`

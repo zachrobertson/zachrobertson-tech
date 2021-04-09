@@ -75,7 +75,7 @@ This is the frontmatter for this post here! You define the frontmatter with the 
 
 The last thing that gave me trouble as a Gatsby beginner was when I went to deploy my site on [Netlify](https://netlify.com). This site lets you continuously deploy a static site from GitHub for free!
 
-The problem I ran into was an error that said `window is not undefined`. This was caused because I was using an object called window in my `index.js` file to check if the user was on the home page or not. This object accesses the local storage of the browser window, but when you use `gatsby build` it will not have a window object. There are some ways to the code with window in a `componentDidMount()` function but I was unable to get this to work. In the end I just created a seperate header adn layout file for the index page to change the functionality but I hope to change it back to a programatic solution soon.
+The problem I ran into was an error that said `window is not undefined`. This was caused because I was using an object called window in my `index.js` file to check if the user was on the home page or not. This object accesses the local storage of the browser window, but when you use `gatsby build` it will not have a window object. There are some ways to the code with window in a `componentDidMount()` function but I was unable to get this to work. In the end I just created a separate header adn layout file for the index page to change the functionality but I hope to change it back to a programatic solution soon.
 
 ## Thanks for Reading
 
